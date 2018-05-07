@@ -1,5 +1,11 @@
 import Immutable from "immutable"
 import { createSelector } from "reselect"
+import axios from "axios"
+// var data = require("../herp.json")
+
+import { data } from "../herp.json"
+
+const originalData = data
 
 export const actions = {
   INIT: "vis/INIT",
@@ -9,12 +15,14 @@ export const actions = {
   UPDATE_SEARCH_TERM: 'vis/UPDATE_SEARCH_TERM',
   UPDATE_QUERY: 'vis/UPDATE_QUERY',
   UPDATE_QUERY_KEY: 'vis/UPDATE_QUERY_KEY',
+  UPDATE_DATA: 'vis/UDPATE_DATA',
 }
 
 const initialState = Immutable.fromJS({
   searchTerm: "",
   query: {},
   isLoading: false,
+  data:data,
 })
 
 export const getInitialState = (kwargs = {}) => initialState.merge(kwargs)
@@ -36,6 +44,8 @@ export default (state = initialState, action) => {
       return state.setIn(["query", action.key], action.value)
     case actions.CLEAR_FILTER:
       return state.set("query", Immutable.fromJS({}))
+    case actions.UPDATE_DATA:
+      return state.set("data", Immutable.fromJS(action.data))
     default:
       return state;
   }
@@ -60,11 +70,89 @@ export const selectSearchTerm = createSelector(
   state => state.get("searchTerm")
 )
 
+export const selectQuery = createSelector(
+  selectVisState,
+  state => state.get('query')
+)
+
 export const makeSelectQueryKey = (key) =>
   createSelector(
     selectVisState,
     state => state.getIn(['query', key])
 )
+
+export const selectData = createSelector(
+  selectVisState,
+  state => state.get('data').filter(item => item.getIn(['end', 'name']) && item.getIn(["start", "name"]))
+)
+export const selectVC = createSelector(
+  selectVisState,
+  state => state.get("data").reduce(
+      (acc, a) => {
+        return acc.add(a.getIn(["vc", "display_name"]))
+    }, Immutable.Set())
+)
+
+export const selectVC1 = createSelector(
+  selectData,
+  state => state.reduce(
+      (acc, a) => {
+        return acc.add(a.getIn(["start", "name"]))
+    }, Immutable.Set())
+)
+
+
+export const selectStartups = createSelector(
+  selectVisState,
+  state => state.get("data").reduce((acc, a) => {
+    return acc.add(a.getIn(["startup", "display_name"]))
+  }, Immutable.Set())
+)
+
+export const selectStartups1 = createSelector(
+  selectData,
+  state => state.reduce((acc, a) => {
+    return acc.add(a.getIn(["end", "name"]))
+  }, Immutable.Set())
+)
+
+export const selectEdges = createSelector(
+  selectVisState,
+  state =>
+    state.get("data").map(edge => ({
+      vc: edge.getIn(['vc', 'display_name']),
+      startup: edge.getIn(['startup', 'display_name']),
+      edge: edge.getIn(['edge', 'display_name'])
+    }))
+)
+
+export const selectEdges1 = createSelector(
+  selectData,
+  state =>
+    state.map(edge => ({
+      vc: edge.getIn(['start', 'name']),
+      startup: edge.getIn(['end', 'name']),
+      edge: edge.get("type")
+    }))
+)
+
+export const updateVisData = (data) =>
+  dispatch => dispatch({ type: actions.UPDATE_DATA, data })
+
+export const fetchVisData = (query) =>
+  (dispatch, getState) => {
+    const query = getState().vis.get("query").toJS()
+    // debugger;
+    const queryString = "?" + Object.keys(query).map(key => [key, String(query[key])].join("=")).join("&")
+
+    axios.get("http://localhost:5000/welcome").then(response=> {
+      // dispatch(updateVisData(response.data))
+    })
+    // dispatch(updateVisData(originalData))
+    // axios.get("/" + queryString).then(response => {
+    //   debugger;
+    // })
+  }
 // export const increment = () => {
 //   return dispatch => {
 //     dispatch({

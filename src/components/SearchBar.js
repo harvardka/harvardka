@@ -15,7 +15,7 @@ const SearchBar = ({ searchTerm, updateSearchTerm }) =>
     <FormGroup
         controlId="formBasicText"
     >
-          <ControlLabel>Search for the thing</ControlLabel>
+          <ControlLabel>Search for VC's and startups</ControlLabel>
           <FormControl
             value={searchTerm}
             type="text"

@@ -9,6 +9,7 @@
     "react-scripts": "^1.0.17"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^4.1.0",
     "immutable": "^3.8.2",
     "popper.js": "^1.14.3",

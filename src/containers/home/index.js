@@ -37,6 +37,10 @@ const Home = props => (
       <CompanyFilterGroup/>
     </Col>
     </Row>
+    <Row>
+    <Col md={8}>
+    </Col>
+    </Row>
     {/*-- Dumb stuff from the boilerplate --
     <p>Count: {props.count}</p>
 
