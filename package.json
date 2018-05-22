@@ -11,12 +11,14 @@
   "dependencies": {
     "apollo-cache-inmemory": "^1.2.1",
     "apollo-client": "^2.3.1",
+    "apollo-link-context": "^1.0.8",
     "apollo-link-http": "^1.5.4",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.0",
     "graphql": "0.13.0",
     "graphql-tag": "^2.9.2",
     "immutable": "^3.8.2",
+    "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
     "rc-slider": "^8.6.1",
     "react": "^16.2.0",
@@ -44,9 +46,6 @@
   },
   "homepage": "https://cra-redux-router-thunk.herokuapp.com",
   "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
   }
 }
