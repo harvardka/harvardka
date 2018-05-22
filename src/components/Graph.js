@@ -4,6 +4,11 @@ import { connect } from "react-redux"
 import { createStructuredSelector } from "reselect"
 import { selectVC, selectStartups, selectEdges, selectSearchTerm, selectQuery, fetchVisData } from "../modules/vis"
 import Immutable from "immutable"
+
+// apollo graphql
+import { compose, graphql } from 'react-apollo'
+import { someGraphQLQuery } from "../queries"
+
 const mapStateToProps = createStructuredSelector({
     vcs:selectVC,
     startups: selectStartups,
@@ -53,3 +58,13 @@ export class Graph extends React.Component{
 }
 
 export default connect(mapStateToProps, { fetchVisData})(Graph)
+
+
+// then, to use apollo you would do
+/*
+export default compose(
+    graphql(someGrahpQlQuery, {...options}),
+    ...queries
+    connect(mapStateToProps, mapDispatchToProps)
+)(Graph)
+ */
