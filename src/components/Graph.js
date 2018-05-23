@@ -13,7 +13,8 @@ import {
   selectEdges,
   selectSearchTerm,
   selectQuery,
-  fetchVisData
+  fetchVisData,
+  updateVisData
 } from '../modules/vis';
 import Immutable from 'immutable';
 
@@ -29,11 +30,14 @@ const mapStateToProps = createStructuredSelector({
   query: selectQuery
 });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchVisData
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   // console.log('data is ', props);
+//   return {
+//     // updateVisData,
+//     updateVisData,
+//     fetchVisData
+//   };
+// };
 
 export class Graph extends React.Component {
   componentDidMount() {
@@ -47,7 +51,7 @@ export class Graph extends React.Component {
     }
   }
   render() {
-    console.log(this.props);
+    console.log('here', this.props);
     const { vcs, startups, edges, searchTerm } = this.props;
     return (
       <InteractiveForceGraph
@@ -97,17 +101,21 @@ export class Graph extends React.Component {
 // export default connect(mapStateToProps, { fetchVisData})(Graph)
 
 // then, to use apollo you would do
-
+// EVENTUALLY WANT TO INJECT QUERY AND OR VARS FROM PROPS
 export default compose(
   graphql(someGraphQLQuery, {
+    props: ({ data: { Organization } }) => ({
+      vcs: Organization
+    }),
     options: {
       variables: {
-        companyName: 'Apple'
+        company_name: 'Apple'
       }
     }
   }),
-  connect(mapStateToProps, mapDispatchToProps)
+  connect(mapStateToProps, { updateVisData, fetchVisData })
 )(Graph);
+
 /*
 export default compose(
     graphql(someGrahpQlQuery, {...options}),
