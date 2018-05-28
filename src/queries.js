@@ -9,3 +9,11 @@ export const someGraphQLQuery = gql`
     }
   }
 `;
+
+export const getMain = gql`
+  query someGraphQLQuery($company_name: String!) {
+    Organization(company_name: $company_name) {
+      company_name
+    }
+  }
+`;

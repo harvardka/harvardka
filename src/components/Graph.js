@@ -17,10 +17,11 @@ import {
   updateVisData
 } from '../modules/vis';
 import Immutable from 'immutable';
+import { withHandlers } from 'recompose';
 
 // apollo graphql
 import { compose, graphql } from 'react-apollo';
-import { someGraphQLQuery } from '../queries';
+import { someGraphQLQuery, getMain } from '../queries';
 
 const mapStateToProps = createStructuredSelector({
   vcs: selectVC,
@@ -41,7 +42,7 @@ const mapStateToProps = createStructuredSelector({
 
 export class Graph extends React.Component {
   componentDidMount() {
-    this.props.fetchVisData(this.props.query);
+    // this.props.fetchVisData();
     // send the initial request to get data...
   }
   componentWillReceiveProps(nextProps) {
@@ -51,50 +52,76 @@ export class Graph extends React.Component {
     }
   }
   render() {
-    console.log('here', this.props);
-    const { vcs, startups, edges, searchTerm } = this.props;
-    return (
-      <InteractiveForceGraph
-        highlightDependencies
-        simulationOptions={{ height: 600, width: 600, animate: true }}
-        onSelectNode={() => console.log('herp!')}
-        onDeselectNode={() => console.log('Schmerp!')}>
-        {vcs
-          .filter(vc => vc.indexOf(searchTerm) != -1)
-          .map(vc => (
-            <ForceGraphNode
-              zoomable
-              key={vc}
-              node={{ id: vc, radius: 10 }}
-              fill="purple"
-            />
-          ))}
-        {startups
-          .filter(startup => startup.indexOf(searchTerm) != -1)
-          .map(startup => (
-            <ForceGraphNode
-              zoomable
-              key={startup}
-              node={{ id: startup, radius: 10 }}
-              fill="grey"
-            />
-          ))}
+    console.log('I AM HERE', this.props);
+    // if(this.props.startups){
+    //     console.log('companies', this.props.startups[0]['acquired'])
+    // }
+    const { vcs, startups, searchTerm } = this.props;
+    if (vcs && this.props.loading == false) {
+      console.log('world', vcs, startups[0]['acquired']);
 
-        {edges
-          .filter(
-            edge =>
-              edge.vc.indexOf(searchTerm) != -1 &&
-              edge.startup.indexOf(searchTerm) != -1
-          )
-          .map(edge => (
-            <ForceGraphArrowLink
-              zoomable
-              key={edge.vc.concat(edge.startup)}
-              link={{ source: edge.vc, target: edge.startup }}
-            />
-          ))}
-      </InteractiveForceGraph>
-    );
+      const edges = startups[0]['acquired'].map(x => {
+        var obj = {};
+        obj['vc'] = vcs[0].company_name;
+        obj['startup'] = x;
+        return obj;
+      });
+      console.log('edges are', edges);
+      return (
+        <InteractiveForceGraph
+          highlightDependencies
+          simulationOptions={{ height: 600, width: 600, animate: true }}
+          onSelectNode={() => console.log('herp!')}
+          onDeselectNode={() => console.log('Schmerp!')}>
+          {vcs
+            // .filter(vc => vc.indexOf(searchTerm) != -1)
+            .map(vc => (
+              // console.log(vc.company_name),
+              <ForceGraphNode
+                zoomable
+                key={vc.company_name}
+                node={{ id: vc.company_name, radius: 10 }}
+                fill="purple"
+              />
+            ))}
+          {startups[0]['acquired']
+            // .filter(startup => startup.indexOf(searchTerm) != -1)
+            .map(startup => (
+              // console.log(startup.company_name),
+              <ForceGraphNode
+                zoomable
+                key={startup.company_name}
+                node={{ id: startup.company_name, radius: 10 }}
+                fill="grey"
+              />
+            ))}
+
+          {edges
+            // .filter(
+            //   edge =>
+            //     edge.vc.indexOf(searchTerm) != -1 &&
+            //     edge.startup.indexOf(searchTerm) != -1
+            // )
+            .map(
+              edge => (
+                console.log(edge),
+                (
+                  <ForceGraphArrowLink
+                    zoomable
+                    key={edge.vc.concat(edge.startup.company_name)}
+                    link={{
+                      source: edge.vc,
+                      target: edge.startup.company_name
+                    }}
+                  />
+                )
+              )
+            )}
+        </InteractiveForceGraph>
+      );
+    } else {
+      return null;
+    }
   }
 }
 
@@ -103,9 +130,10 @@ export class Graph extends React.Component {
 // then, to use apollo you would do
 // EVENTUALLY WANT TO INJECT QUERY AND OR VARS FROM PROPS
 export default compose(
-  graphql(someGraphQLQuery, {
-    props: ({ data: { Organization } }) => ({
-      vcs: Organization
+  graphql(getMain, {
+    props: ({ data: { loading, Organization } }) => ({
+      vcs: Organization,
+      loading: loading
     }),
     options: {
       variables: {
@@ -113,7 +141,23 @@ export default compose(
       }
     }
   }),
-  connect(mapStateToProps, { updateVisData, fetchVisData })
+  graphql(someGraphQLQuery, {
+    props: ({ data: { loading, Organization } }) => ({
+      startups: Organization,
+      loading: loading
+    }),
+    options: {
+      variables: {
+        company_name: 'Apple'
+      }
+    }
+  })
+  // connect(mapStateToProps, { fetchVisData }),
+  // withHandlers({
+  //   fetchVisData: props => nodes => {
+  //       console.log('maddy ', props.fetchVisData(nodes));
+  //   }
+  // })
 )(Graph);
 
 /*
