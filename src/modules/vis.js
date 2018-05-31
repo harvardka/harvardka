@@ -15,14 +15,19 @@ export const actions = {
   UPDATE_SEARCH_TERM: 'vis/UPDATE_SEARCH_TERM',
   UPDATE_QUERY: 'vis/UPDATE_QUERY',
   UPDATE_QUERY_KEY: 'vis/UPDATE_QUERY_KEY',
-  UPDATE_DATA: 'vis/UDPATE_DATA'
+  UPDATE_DATA: 'vis/UDPATE_DATA',
+  GET_SEARCH: 'vis/GET_SEARCH',
+  UPDATE_BOX_TEXT: 'vis/UPDATE_BOX_TEXT'
 };
 
 const initialState = Immutable.fromJS({
   searchTerm: '',
+  boxText: '',
   query: {},
   isLoading: true,
-  data: data
+  data: data,
+  searched: false,
+  key: 0
 });
 
 export const getInitialState = (kwargs = {}) => initialState.merge(kwargs);
@@ -35,7 +40,12 @@ export default (state = initialState, action) => {
     case actions.LOAD_SUCCESS:
       return state.set('isLoading', false);
     case actions.UPDATE_SEARCH_TERM:
+      console.log(state.get('boxText'));
+      console.log(action.value);
       return state.set('searchTerm', action.value);
+    case actions.UPDATE_BOX_TEXT:
+      console.log('state');
+      return state.set('boxText', action.value);
     case actions.UPDATE_QUERY:
       // completely replace the query key in state
       return state.set('query', Immutable.fromJS(action.query));
@@ -46,6 +56,8 @@ export default (state = initialState, action) => {
       return state.set('query', Immutable.fromJS({}));
     case actions.UPDATE_DATA:
       return state.set('data', Immutable.fromJS(action.data));
+    case actions.GET_SEARCH:
+      return state.get('searchTerm');
     default:
       return state;
   }
@@ -54,6 +66,9 @@ export default (state = initialState, action) => {
 // action creators
 export const updateSearchTerm = value => dispatch =>
   dispatch({ type: actions.UPDATE_SEARCH_TERM, value });
+
+export const updateBoxText = value => dispatch =>
+  dispatch({ type: actions.UPDATE_BOX_TEXT, value });
 
 export const updateQuery = query => dispatch =>
   dispatch({ type: actions.UPDATE_QUERY, query });
@@ -65,8 +80,16 @@ export const updateQueryKey = (key, value) => dispatch =>
 
 const selectVisState = state => state.vis;
 
+export const selectKey = createSelector(selectVisState, state =>
+  state.get('key')
+);
+
 export const selectSearchTerm = createSelector(selectVisState, state =>
   state.get('searchTerm')
+);
+
+export const selectBoxText = createSelector(selectVisState, state =>
+  state.get('boxText')
 );
 
 export const selectQuery = createSelector(selectVisState, state =>
@@ -122,6 +145,9 @@ export const selectEdges1 = createSelector(selectData, state =>
     edge: edge.get('type')
   }))
 );
+
+export const fetchSearchTerm = data => dispatch =>
+  dispatch({ type: actions.GET_SEARCH, data });
 
 export const updateVisData = data => dispatch =>
   dispatch({ type: actions.UPDATE_DATA, data });
