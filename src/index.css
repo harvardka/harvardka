@@ -14,3 +14,10 @@ body {
 button:disabled {
   opacity: 0.5;
 }
+
+.flex-grid {
+  display: flex;
+}
+.col {
+  flex: 1;
+}

@@ -8,7 +8,6 @@ import {
   decrement,
   decrementAsync
 } from '../../modules/counter';
-
 import SearchBar from '../../components/SearchBar';
 import SearchButtonGroup from '../../components/SearchButtonGroup';
 import Card from '../../components/Card';
@@ -19,21 +18,22 @@ import {
   Col,
   FormGroup,
   FormControl,
-  ControlLabel
+  ControlLabel,
+  Grid
 } from 'react-bootstrap';
 
 import FilterNavigation from '../../components/FilterNavigation';
 import CompanyFilterGroup from '../../components/CompanyFilterGroup';
 
 const Search = props => (
-  <Col>
+  <Grid>
     <Row>
       <SearchBar />
     </Row>
     <Row>
       <Card />
     </Row>
-  </Col>
+  </Grid>
 );
 
 const mapStateToProps = state => ({

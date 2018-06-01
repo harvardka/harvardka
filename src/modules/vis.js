@@ -40,11 +40,8 @@ export default (state = initialState, action) => {
     case actions.LOAD_SUCCESS:
       return state.set('isLoading', false);
     case actions.UPDATE_SEARCH_TERM:
-      console.log(state.get('boxText'));
-      console.log(action.value);
       return state.set('searchTerm', action.value);
     case actions.UPDATE_BOX_TEXT:
-      console.log('state');
       return state.set('boxText', action.value);
     case actions.UPDATE_QUERY:
       // completely replace the query key in state

@@ -18,6 +18,7 @@ export const getMain = gql`
         first_name
         last_name
       }
+      description
       funding_total_usd
       founded_on
       last_funding_on
@@ -25,6 +26,7 @@ export const getMain = gql`
       phone
       facebook_url
       linkedin_url
+      logo_url
     }
   }
 `;
