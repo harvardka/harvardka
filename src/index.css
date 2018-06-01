@@ -17,7 +17,27 @@ button:disabled {
 
 .flex-grid {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
-.col {
-  flex: 1;
+
+.flex-grid .third {
+  width: 32%;
+}
+
+.flex-grid .quarter {
+  width: 24%;
+}
+
+.flex-grid .fifth {
+  width: 19%;
+}
+
+.flex-grid .half {
+  width: 49%;
+}
+
+.flex-grid .center {
+  justify-content: center;
+  align-items: center;
 }
