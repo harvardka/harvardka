@@ -1,5 +1,4 @@
 import React from 'react';
-import { ButtonToolbar, Button } from 'react-bootstrap';
 import { compose, graphql } from 'react-apollo';
 import { someGraphQLQuery, getMain } from '../queries';
 import {
@@ -10,7 +9,7 @@ import {
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import '../index.css';
-import { Row, Col, Image, Panel, Glyphicon } from 'react-bootstrap';
+import { Button, Row, Col, Image, Panel, Glyphicon } from 'react-bootstrap';
 
 const mapStateToProps = state =>
   createStructuredSelector({
@@ -39,17 +38,19 @@ export class CompanyResult extends React.Component {
       console.log('props are', this.props);
 
       return (
-        <div className="flex-grid">
-          <div className="fifth">
-            <Image src={data.logo_url} responsive thumbnail />
+        <Panel style={{ width: '100%' }}>
+          <div className="flex-grid" style={{ padding: '15px' }}>
+            <div className="fifth">
+              <Image src={data.logo_url} responsive thumbnail />
+            </div>
+            <div className="half">
+              <h1>{this.props.vcs[0].company_name}</h1>
+            </div>
+            <div className="fifth center">
+              <Button bsStyle="success">Join</Button>
+            </div>
           </div>
-          <div className="half">
-            <h1>{this.props.vcs[0].company_name}</h1>
-          </div>
-          <div className="fifth center">
-            <Glyphicon glyph="user" />
-          </div>
-        </div>
+        </Panel>
       );
     } else {
       return null;
