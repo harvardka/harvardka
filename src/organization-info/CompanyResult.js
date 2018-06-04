@@ -1,20 +1,15 @@
 import React from 'react';
 import { compose, graphql } from 'react-apollo';
 import { someGraphQLQuery, getMain } from './queries';
-import {
-  selectBoxText,
-  updateSearchTerm,
-  fetchSearchTerm
-} from '../graph/vis.js';
+import { selectBoxText, updateSearchTerm, selectSearchTerm } from './search.js';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import '../common/index.css';
 import { Button, Row, Col, Image, Panel, Glyphicon } from 'react-bootstrap';
 
-const mapStateToProps = state =>
-  createStructuredSelector({
-    searchTerm: selectBoxText
-  });
+const mapStateToProps = state => {
+  return { searchTerm: state.search.get('searchTerm') };
+};
 
 export class CompanyResult extends React.Component {
   // shouldComponentUpdate(nextProps){
@@ -23,7 +18,7 @@ export class CompanyResult extends React.Component {
   // }
 
   render() {
-    console.log('search is', this.props, this.props.searchTerm);
+    console.log('PROPS ARE', this.props);
     if (
       this.props.vcs &&
       this.props.vcs.length > 0 &&

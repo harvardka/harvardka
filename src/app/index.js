@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import Search from '../search';
 import Create_Org from '../organization-info';
 import Header from './Header';
 

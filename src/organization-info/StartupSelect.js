@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { selectStartups } from '../graph/vis.js';
+import { selectStartups } from './search.js';
 import Select from 'react-select';
 
 const QUERY_KEY = 'startup';

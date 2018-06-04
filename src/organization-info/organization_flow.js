@@ -2,7 +2,7 @@ export const TOGGLE_JOIN = 'organization_flow/TOGGLE_JOIN';
 export const TOGGLE_CREATE = 'organization_flow/TOGGLE_CREATE';
 
 const initialState = {
-  create: true,
+  create: false,
   str: 'Maddy Theresa'
 };
 

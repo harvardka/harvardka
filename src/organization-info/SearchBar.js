@@ -1,16 +1,12 @@
 import React from 'react';
 import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 
-import {
-  updateBoxText,
-  selectSearchTerm,
-  updateSearchTerm
-} from '../graph/vis.js';
+import { updateBoxText, selectSearchTerm, updateSearchTerm } from './search.js';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-const mapStateToProps = createStructuredSelector({
-  searchTerm: selectSearchTerm
+const mapStateToProps = state => ({
+  searchTerm: state.searchTerm
 });
 
 // value={this.state.value}
