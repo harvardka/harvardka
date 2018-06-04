@@ -2,11 +2,7 @@ import React from 'react';
 import { ButtonToolbar, Button } from 'react-bootstrap';
 import { compose, graphql } from 'react-apollo';
 import { someGraphQLQuery, getMain } from '../organization-info/queries';
-import {
-  selectBoxText,
-  updateSearchTerm,
-  fetchSearchTerm
-} from '../graph/vis.js';
+import { selectBoxText, updateSearchTerm } from './search.js';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 

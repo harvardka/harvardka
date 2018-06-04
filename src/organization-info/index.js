@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Row, Col, Button, Modal } from 'react-bootstrap';
 import { toggleJoin, toggleCreate } from './organization_flow';
 import JoinOrg from './JoinOrg';
+import CreateOrg from './CreateOrg';
 
 const Create_Org = ({ create, str, toggleJoin, toggleCreate }) => (
   <Col>
@@ -24,6 +25,7 @@ const Create_Org = ({ create, str, toggleJoin, toggleCreate }) => (
       )}
     </Row>
     {!create && <JoinOrg />}
+    {create && <CreateOrg />}
   </Col>
 );
 
