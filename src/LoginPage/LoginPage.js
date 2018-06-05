@@ -73,7 +73,6 @@ class LoginPage extends React.Component {
 
 function mapStateToProps(state) {
     const { loggingIn } = state.authentication;
-    console.log("Yo here you go" + { loggingIn });
     return {
         loggingIn
     };
