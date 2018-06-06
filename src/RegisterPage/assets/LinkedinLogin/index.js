@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import RegisterPage from '../../RegisterPage';
+import { Image } from 'react-bootstrap';
 
 //Assets
 // import linkedin from './linkedin_fixed.png'
@@ -38,13 +39,7 @@ class LinkedinLogin extends React.Component{
         setTimeout(function(){
                 this.getUserDetails()
             }.bind(this),1000);
-
-
-        console.log( "Loaded" );
-        this.setState({
-            visibility: false
-          })
-        }
+    }
 
     getUserDetails(){
         window.IN.User.authorize( () => {
@@ -59,6 +54,11 @@ class LinkedinLogin extends React.Component{
                       lastName: result.values[0].lastName,
                       pictureUrl: result.values[0].pictureUrl
                     });
+
+                    // This will clear out the LinkedIn Login button.
+                    this.setState({
+                        visibility: false
+                      })
                 })
                 .error(function(err) {
                     console.log('Import error - Error occured while importing data')
@@ -73,7 +73,7 @@ class LinkedinLogin extends React.Component{
                 { isLinkedInAuthenticated? (
                     <br/>
                 ) : (
-                    <img width='200' src='https://readitfor.me/images/bt-signup-with-linkedin-2017.png' title="linkedin login" alt="linkedin" onClick={ this.linkedinLogin.bind(this)  }/>
+                    <Image width='200' src='https://readitfor.me/images/bt-signup-with-linkedin-2017.png' title="linkedin login" alt="linkedin" onClick={ this.linkedinLogin.bind(this)  }/>
                 )}
             </div>
 

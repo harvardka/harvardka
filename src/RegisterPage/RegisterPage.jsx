@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LinkedinLogin from './assets/LinkedinLogin/';
+import { Image } from 'react-bootstrap';
+
 
 import { userActions } from '../_actions';
 
@@ -80,7 +82,8 @@ class RegisterPage extends React.Component {
                 <form name="form" onSubmit={this.handleSubmit}>
 
                     <div>
-                        <img src={this.state.user.pictureUrl}/>
+                        <Image circle src={this.state.user.pictureUrl}/>
+                        <br/><br/>
                     </div>
                     <div className={'form-group' + (submitted && !user.firstName ? ' has-error' : '')}>
                         <label htmlFor="firstName">First Name</label>
