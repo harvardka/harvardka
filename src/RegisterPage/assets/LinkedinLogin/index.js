@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import RegisterPage from '../RegisterPage';
+import RegisterPage from '../../RegisterPage';
 
 //Assets
 // import linkedin from './linkedin_fixed.png'
