@@ -35,9 +35,9 @@ class App extends React.Component {
         return (
             <div>
                 < Header / >
-                <div className="jumbotron" >
-                    <div className="container">
-                        <div className="col-sm-8 col-sm-offset-2">
+                <div>
+                    <div>
+                        <div>
                             {alert.message &&
                                 <div className={`alert ${alert.type}`}>{alert.message}</div>
                             }
@@ -46,11 +46,15 @@ class App extends React.Component {
                             <ApolloProvider client = { Client }>
                                 <Router history={history}>
                                     <div>
-                                        <PrivateRoute exact path="/" component={HomePage} />
-                                        <Route path="/login" component={LoginPage} />
-                                        <Route path="/register" component={RegisterPage} />
-                                        <Route path="/test" component={TestPage} />
-                                        <Route path="/profile" component={ProfilePage} />
+                                        <div className="col-sm-8 col-sm-offset-2">
+                                          <PrivateRoute exact path="/" component={HomePage} />
+                                          <Route path="/login" component={LoginPage} />
+                                          <Route path="/register" component={RegisterPage} />
+                                          <Route path="/test" component={TestPage} />
+                                        </div>
+                                        <div>
+                                          <PrivateRoute exact path="/profile" component={ProfilePage} />
+                                        </div>
                                     </div>
                                 </Router>
                             </ApolloProvider>

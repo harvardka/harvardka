@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { userActions } from '../_actions';
 import styled from 'styled-components';
 
+import { store } from '../_helpers/store';
 
 // Assets
 import TestChild from './assets/TestChild';
@@ -14,14 +15,18 @@ const Div = styled.div`
     padding: 20px;
 `;
 
-class TestPage extends React.Component {
+class ProfilePage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             text1: 0,
             text2: "Enter below to change a parent state from the child.",
-            text3: "This variable was passed from parent to child"
+            text3: "This variable was passed from parent to child",
+            isLoggedIn: false,
+            imageSource: '',
+            firstName: '',
+            lastName: ''
         };
 
         this.handleB1 = this.handleB1.bind(this);
@@ -44,24 +49,14 @@ class TestPage extends React.Component {
 
     }
 
-
-
     render() {
-
         return (
             <Div>
-                <ProfileInfo />
-                <h2>TestPage</h2>
-                <div>
-                    <p>Button 1 increments this number: { this.state.text1} </p>
-                    <button onClick={ this.handleB1 }>Button1: Change a TestPage state from TestPage.</button>
-                </div>
-                <br/><br/><br/>
-
-                <div>
-                    <p>Button 2 changes this text: {this.state.text2}</p>
-                    < TestChild text3 = { this.state.text3 } handleTestChildSubmit = {this.handleTestChildSubmit} / >
-                </div>
+                <ProfileInfo
+                    first={store.getState().authentication.user.firstName}
+                    last={store.getState().authentication.user.lastName}
+                    pic={store.getState().authentication.user.pictureUrl}
+                />
             </Div>
         );
     }
@@ -76,5 +71,5 @@ function mapStateToProps(state) {
     };
 }
 
-const connectedTestPage = connect(mapStateToProps)(TestPage);
+const connectedTestPage = connect(mapStateToProps)(ProfilePage);
 export { connectedTestPage as ProfilePage };
