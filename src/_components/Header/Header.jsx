@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Navbar, Nav , NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
+import { Image, Navbar, Nav , NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 
 import { store } from '../../_helpers/store';
 
@@ -17,7 +17,8 @@ class Header extends React.Component {
             isLoggedIn: false,
             imageSource: '',
             firstName: '',
-            lastName: ''
+            lastName: '',
+            pictureUrl: ''
         };
 
         this.handleLoginChange = this.handleLoginChange.bind(this);
@@ -33,9 +34,9 @@ class Header extends React.Component {
         if (store.getState().authentication.loggedIn){
             this.setState({
                 isLoggedIn: true,
-                firstName: store.getState().authentication.user.firstName,
-                lastName: store.getState().authentication.user.lastName,
-                imageSource: JSON.stringify(localStorage.getItem('user')),
+                firstName: this.props.user.firstName,
+                lastName: this.props.user.lastName,
+                pictureUrl: this.props.user.pictureUrl,
             });
             // alert(this.state.imageSource);
         }
@@ -61,7 +62,7 @@ class Header extends React.Component {
                         {/* Checks to see if user is logged in. Shows my Profile
                             if true, else shows login/signup prompt*/}
 
-                            < UserNav firstName = { this.state.firstName } isLoggedIn = { this.state.isLoggedIn } />
+                            < UserNav firstName = { this.state.firstName } pictureUrl = {this.state.pictureUrl} isLoggedIn = { this.state.isLoggedIn } />
 
                         </Nav>
                     </Navbar.Collapse>
@@ -74,9 +75,9 @@ class Header extends React.Component {
 /* Below, registering is a filler. It modifies a state that is irrelevant to your
 component. Here, though, can you use mapStateToProps accordingly.*/
 function mapStateToProps(state) {
-    const { registering } = state.registration;
+    const { user } = state.authentication;
     return {
-        registering
+        user
     };
 }
 
