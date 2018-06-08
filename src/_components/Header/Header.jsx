@@ -26,6 +26,7 @@ class Header extends React.Component {
 
     componentWillMount(){
         store.subscribe(this.handleLoginChange);
+        this.handleLoginChange()
     };
 
     handleLoginChange(){
