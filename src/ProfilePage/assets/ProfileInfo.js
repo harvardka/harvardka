@@ -305,7 +305,7 @@ class ProfileInfo extends Component {
             <Border
               p={10}
               borderColor={accent}>
-            <div ref={(elem) => this.elemHeight = elem.clientHeight}>
+            <div>
               <Flex>
                   <Box width={1/6}  p={15}>
                     <div className="text-center">
@@ -319,7 +319,6 @@ class ProfileInfo extends Component {
                         {this.props.first} {this.props.last}
                       </Heading>
                       <Text color={accent} align='right'>Student at Harvard University </Text>
-                      <p>{this.elemHeight}</p>
                   </Box>
                 </Flex>
               </div>

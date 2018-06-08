@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import { store } from '../_helpers/store';
 
 // Assets
-import TestChild from './assets/TestChild';
 import ProfileInfo from './assets/ProfileInfo';
 
 const Div = styled.div`
@@ -16,38 +15,6 @@ const Div = styled.div`
 `;
 
 class ProfilePage extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            text1: 0,
-            text2: "Enter below to change a parent state from the child.",
-            text3: "This variable was passed from parent to child",
-            isLoggedIn: false,
-            imageSource: '',
-            firstName: '',
-            lastName: ''
-        };
-
-        this.handleB1 = this.handleB1.bind(this);
-        this.handleTestChildSubmit = this.handleTestChildSubmit.bind(this);
-    }
-
-    handleTestChildSubmit(data){
-      this.setState({
-          text2: data.text2
-      });
-
-    }
-
-    handleB1(event){
-        event.preventDefault();
-
-        this.setState({
-            text1: this.state.text1 +1
-        });
-
-    }
 
     render() {
         return (
