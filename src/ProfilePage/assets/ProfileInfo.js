@@ -84,8 +84,14 @@ class AboutMe extends Component {
 
   handleChange(event) {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    if (value.length > 60) {
+      alert('too long!');
+    }
+    else {
+      this.setState({ [name]: value });
+    }
   }
+
   handleSubmit(){
     this.setState({
       edit: false
@@ -235,7 +241,7 @@ class UserInfo extends Component {
         <div className='text-center'>
           <Button bsSize='small' onClick={this.handleEdit}>Edit Info</Button>
         </div>
-        <WhiteSpace y={2} />
+        <WhiteSpace y={1} />
         </div>
         }
         </div>
