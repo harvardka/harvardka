@@ -169,7 +169,7 @@ class UserInfo extends Component {
     super(props);
 
     this.state = {
-      edit: true,
+      edit: false,
       region: 'Massachusetts',
       city: 'Cambridge',
       company: 'Company',
