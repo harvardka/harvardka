@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import {Box, Heading, Row, Column, Flex, Subhead, Border, Divider, Message, Text} from 'rebass';
-import {Alert, strong, Image, Button} from 'react-bootstrap';
+import {Flex, Box, Heading, Row, Column, Subhead, Border, Divider, Text, Input, Carousel} from 'rebass';
+import {Alert, strong, Image, Button, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 import { store } from '../../_helpers/store';
 import { userActions } from '../../_actions';
+import TextInput from './TextInput'
 
 //import user from './user.jpg';
 
@@ -48,7 +49,7 @@ class Descr2 extends Component {
   render () {
     return (
       <Box>
-        <div className='text-center'>
+        <div className='text-center col-sm-9 col-sm-offset-2'>
           <Text fontWeight='bold' color={accent} fontSize={14}>{this.props.main}</Text>
           <p >{this.props.sub}</p>
         </div>
@@ -58,29 +59,106 @@ class Descr2 extends Component {
 }
 
 
+class AboutMe extends Component {
+  constructor(props) {
+    super(props);
 
-class UserProfile extends Component {
+    this.state = {
+      edit: false,
+      interests: 'I enjoy running, music, photography, and art',
+      funFact: 'I\'ve read the Harry Potter series at least 10 times.',
+      million: 'I would travel the world and buy lots of cats.',
+      thing: 'My headphones'
+    }
+
+    this.handleEdit = this.handleEdit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleEdit(){
+    this.setState({
+      edit: true
+    })
+  }
+
+  handleChange(event) {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  }
+  handleSubmit(){
+    this.setState({
+      edit: false
+    })
+  }
+
   render () {
     return (
       <Border
         p={10}
-        borderColor={accent}
-        top
-        bottom>
+        borderColor={accent}>
         <WhiteSpace y={2} />
-        <Subhead align='center' color={accent}>Basic Info</Subhead>
+        <Subhead align='center' color={accent}>About Me</Subhead>
         <Divider
           w={1}
           color='white'
         />
         <WhiteSpace y={2} />
-          <Descr2 main={'Massachusetts'} sub={'Cambridge'} />
-          <Descr2 main={'Company'} sub={'Occupation'} />
-          <Descr2 main={'No. of Connections'} sub={'Rating'} />
-        <WhiteSpace y={2} />
-        <div className='text-center'>
-          <Button bsSize='small'>Edit Info</Button>
-        </div>
+        {this.state.edit
+
+          ? <div>
+            <Flex>
+              <Box width={1/2} px={3}>
+              <form>
+                <Text fontWeight='bold' color={accent} fontSize={14}>My Interests</Text>
+                <TextInput id='interests' name='interests' value={this.state.interests} onChange={this.handleChange}/>
+              </form>
+              </Box>
+              <Box width={1/2} px={3}>
+                <Text fontWeight='bold' align='right' color={accent} fontSize={14}>Fun Fact about Me</Text>
+                <TextInput id='funFact' name='funFact' value={this.state.funFact} onChange={this.handleChange}/>
+              </Box>
+            </Flex>
+            <WhiteSpace y={2} />
+            <Flex>
+              <Box width={1/2} px={3}>
+                <Text fontWeight='bold' color={accent} fontSize={14}>If I won $1 million...</Text>
+                <TextInput id='million' name='million' value={this.state.million} onChange={this.handleChange}/>
+              </Box>
+              <Box width={1/2} px={3}>
+              <Text fontWeight='bold' align='right' color={accent} fontSize={14}>One thing I cannot live without is...</Text>
+                <TextInput id='thing' name='thing' value={this.state.thing} onChange={this.handleChange}/>
+              </Box>
+            </Flex>
+            <WhiteSpace y={3} />
+            <div className='text-center'>
+              <Button bsSize='small' onClick={this.handleSubmit}>Save</Button>
+            </div>
+          </div>
+          : <div>
+            <Flex>
+              <Box width={1/2}>
+                <Descr2 main={'My Interests'} sub={this.state.interests} />
+              </Box>
+              <Box width={1/2}>
+                <Descr2 main={'Fun Fact'} sub={this.state.funFact} />
+              </Box>
+            </Flex>
+            <WhiteSpace y={2} />
+            <Flex>
+              <Box width={1/2}>
+                <Descr2 main={'If I won $1 million...'} sub={this.state.million} />
+              </Box>
+              <Box width={1/2}>
+                <Descr2 main={'One thing I couldn\'t live without'} sub={this.state.thing} />
+              </Box>
+            </Flex>
+            <WhiteSpace y={2} />
+            <div className='text-center'>
+              <Button bsSize='small' onClick={this.handleEdit}>Edit Info</Button>
+            </div>
+          </div>
+        }
         </Border>
     )
   }
@@ -91,7 +169,7 @@ class UserInfo extends Component {
     super(props);
 
     this.state = {
-      edit: false,
+      edit: true,
       region: 'Massachusetts',
       city: 'Cambridge',
       company: 'Company',
@@ -124,14 +202,7 @@ class UserInfo extends Component {
 
   render () {
     return (
-      <Border
-        p={10}
-        borderColor='white'
-        height={6}
-        bg={accent}
-        color={dark}
-        top
-        bottom>
+      <div>
         <WhiteSpace y={2} />
         <Subhead align='center' color='white'>Basic Info</Subhead>
         <Divider
@@ -142,22 +213,21 @@ class UserInfo extends Component {
         { this.state.edit
 
         ? <div>
-                <div className="form-group text-center">
-                    <input type="text" name="region" value={this.state.region} onChange={this.handleChange}/>
-                    <input type="text" name="city" value={this.state.city} onChange={this.handleChange}/>
-                    <input type="text" name="company" value={this.state.company} onChange={this.handleChange}/>
-                    <input type="text" name="role" value={this.state.role} onChange={this.handleChange}/>
-                    <input type="text" name="connections" value={this.state.connections} onChange={this.handleChange}/>
-                    <input type="text" name="rating" value={this.state.rating} onChange={this.handleChange}/>
+            <WhiteSpace y={1} />
+            <form>
+                <div className="text-center col-sm-8 col-sm-offset-2">
+                <TextInput id='region'  name='region' value={this.state.region} onChange={this.handleChange}/>
+                <TextInput id='city' name='city' value={this.state.city} onChange={this.handleChange}/>
+                <TextInput id='company' name='company' value={this.state.company} onChange={this.handleChange}/>
+                <TextInput id='role' name='role' value={this.state.role} onChange={this.handleChange}/>
                 </div>
-
-                <div className="form-group text-center">
-                    <Button bsSize='small' onClick={this.handleSubmit}>Save changes</Button>
+            </form>
+                <div className="text-center">
+                    <Button bsSize='small' onClick={this.handleSubmit}>Save</Button>
                 </div>
         </div>
-
-
-        : <div> <WhiteSpace y={2} />
+        : <div>
+        <WhiteSpace y={2} />
           <Descr main={this.state.region} sub={this.state.city} />
           <Descr main={this.state.company} sub={this.state.role} />
           <Descr main={this.state.connections} sub={this.state.rating} />
@@ -165,10 +235,10 @@ class UserInfo extends Component {
         <div className='text-center'>
           <Button bsSize='small' onClick={this.handleEdit}>Edit Info</Button>
         </div>
+        <WhiteSpace y={2} />
         </div>
         }
-
-        </Border>
+        </div>
     )
   }
 }
@@ -192,9 +262,7 @@ class Organizations extends Component {
       <Border
         p={10}
         borderColor={accent}
-        bg={accent}
-        top
-        bottom>
+        bg={accent}>
           <Box color={dark} p={10} height={1}>
               <div className="text-center">
                 <WhiteSpace y={2} />
@@ -222,41 +290,52 @@ class ProfileInfo extends Component {
   // }
 
   render () {
-    alert(this.props.user)
+    //alert(JSON.stringify(this.props.pic))
     return (
       <div>
-      <Row>
-        <Column width={3/4}>
-          <Border
-            p={10}
-            borderColor={accent}
-            top
-            bottom>
-          <Flex flexWrap='wrap'>
-              <Box width={1/6}  p={15}>
-                <div className="text-center">
-                  <Image src={this.props.pic}/>
-                </div>
-              </Box>
-              <Box p={40} width={5/6}>
-                  <Heading
-                    is='h2'
-                    fontSize={[ 4, 5, 6 ]} align='right' color={dark}>
-                    {this.props.first} {this.props.last}
-                  </Heading>
-                  <Text color={accent} align='right'>Student at Harvard University </Text>
-              </Box>
-            </Flex>
-            </Border>
-          <WhiteSpace y={2} />
-          <Row>
-            <Column width={1/3}>
-              <UserInfo />
-            </Column>
-            <Column width={2/3}>
-              <UserProfile />
-            </Column>
-          </Row>
+
+        <Row>
+          <Column width={3/4}>
+            <Border
+              p={10}
+              borderColor={accent}>
+            <div ref={(elem) => this.elemHeight = elem.clientHeight}>
+              <Flex>
+                  <Box width={1/6}  p={15}>
+                    <div className="text-center">
+                      <Image src={this.props.pic}/>
+                    </div>
+                  </Box>
+                  <Box p={40} width={5/6}>
+                      <Heading
+                        is='h2'
+                        fontSize={[ 4, 5, 6 ]} align='right' color={dark}>
+                        {this.props.first} {this.props.last}
+                      </Heading>
+                      <Text color={accent} align='right'>Student at Harvard University </Text>
+                      <p>{this.elemHeight}</p>
+                  </Box>
+                </Flex>
+              </div>
+              </Border>
+            <WhiteSpace y={2} />
+            <Row>
+              <Column width={1/3}>
+              <Border
+                p={10}
+                bg={accent}
+                borderColor={accent}
+                color={dark}
+              >
+                <UserInfo />
+              </Border>
+              </Column>
+              <Column width={2/3}>
+
+                <AboutMe />
+
+              </Column>
+            </Row>
         </Column>
         <Column width={1/4}>
           <Organizations />
