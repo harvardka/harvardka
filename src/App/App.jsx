@@ -11,6 +11,7 @@ import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import { TestPage } from '../TestPage';
+import { MatchPage } from '../MatchPage'
 
 // Apollo
 import { ApolloProvider } from 'react-apollo';
@@ -46,6 +47,7 @@ class App extends React.Component {
                                     <Route path="/login" component={LoginPage} />
                                     <Route path="/register" component={RegisterPage} />
                                     <Route path="/test" component={TestPage} />
+                                    <Route path="/match" component={MatchPage} />
                                 </div>
                             </Router>
                         </ApolloProvider>
