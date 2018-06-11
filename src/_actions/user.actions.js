@@ -54,8 +54,8 @@ function register(user) {
             .then(
                 user => {
                     dispatch(success());
-                    history.push('/login');
-                    dispatch(alertActions.success('Registration successful'));
+                    history.push('/');
+                    dispatch(alertActions.success('Registered. Welcome to Uneaux!'));
                 },
                 error => {
                     dispatch(failure(error));
