@@ -2051,6 +2051,13 @@ grid-styled@^3.2.1:
     styled-components ">=2.0 || >=3.0"
     styled-system ">=2.0.2"
 
+grid-styled@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/grid-styled/-/grid-styled-4.1.0.tgz#adb060021b9562e02750ce515dae47f03559b4b9"
+  dependencies:
+    clean-tag "^1.0.3"
+    styled-system ">=2.0.2"
+
 handle-thing@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-1.2.5.tgz#fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4"
