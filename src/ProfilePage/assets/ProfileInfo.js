@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Flex, Box, Heading, Row, Column, Subhead, Border, Divider, Text, Input, Carousel} from 'rebass';
+import {Flex, Box, Heading, Row, Column, Subhead, Border, Divider, Text, Input, Carousel, Dot} from 'rebass';
 import {Alert, strong, Image, Button, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 import { store } from '../../_helpers/store';
 import { userActions } from '../../_actions';
@@ -22,6 +22,18 @@ class Br extends Component {
   render () {
     return (
       <br></br>
+    )
+  }
+}
+
+class Ellipsis extends Component {
+  render () {
+    return (
+      <span>
+      <Dot bg={this.props.bg} size={this.props.size}/>
+      <Dot bg={this.props.bg} size={this.props.size}/>
+      <Dot bg={this.props.bg} size={this.props.size}/>
+      </span>
     )
   }
 }
@@ -96,6 +108,7 @@ class AboutMe extends Component {
     return (
       <Border
         p={10}
+        border={2}
         borderColor={accent}
         style={{borderRadius: '5px'}}>
         <WhiteSpace y={1} />
@@ -120,7 +133,6 @@ class AboutMe extends Component {
                 <TextInput id='funFact' name='funFact' value={this.state.funFact} onChange={this.handleChange}/>
               </Box>
             </Flex>
-            <WhiteSpace y={1} />
             <Flex>
               <Box width={1/2} px={3}>
                 <Text fontWeight='bold' color={accent} fontSize={14}>If I won $1 million...</Text>
@@ -134,6 +146,7 @@ class AboutMe extends Component {
             <WhiteSpace y={2} />
             <div className='text-center'>
               <Button bsSize='small' onClick={this.handleSubmit}>Save</Button>
+
             </div>
           </div>
           : <div>
@@ -154,12 +167,14 @@ class AboutMe extends Component {
                 <Descr2 main={'One thing I couldn\'t live without'} sub={this.state.thing} />
               </Box>
             </Flex>
-            <WhiteSpace y={2} />
             <div className='text-center'>
-              <Button bsSize='small' onClick={this.handleEdit}>Edit Info</Button>
+              <Button bsSize='small' onClick={this.handleEdit}>Edit Profile</Button>
+
             </div>
+
           </div>
         }
+        <WhiteSpace y={2} />
         </Border>
     )
   }
@@ -204,6 +219,10 @@ class UserInfo extends Component {
   render () {
     return (
       <div>
+        <WhiteSpace y={1} />
+        <div className='text-center'>
+            <Ellipsis color='white' size={15} />
+        </div>
         <WhiteSpace y={2} />
         <Subhead align='center' color='white'>Basic Info</Subhead>
         <Divider
@@ -236,7 +255,7 @@ class UserInfo extends Component {
         <div className='text-center'>
           <Button bsSize='small' onClick={this.handleEdit}>Edit Info</Button>
         </div>
-        <WhiteSpace y={1} />
+        <WhiteSpace y={2} />
         </div>
         }
         </div>
@@ -266,7 +285,9 @@ class Organizations extends Component {
         bg={accent}
         style={{borderRadius: '5px'}}>
               <div className="text-center">
-                <WhiteSpace y={3} />
+                <WhiteSpace y={2} />
+                <Ellipsis size={15} color='white' />
+                <WhiteSpace y={1} />
                 <Subhead color='white'>Organizations</Subhead>
                 <WhiteSpace y={1} />
                 <Divider></Divider>
@@ -277,7 +298,9 @@ class Organizations extends Component {
                 <CoName />
                 <WhiteSpace y={1} />
                 <Button bsSize='small' >Add Organization</Button>
-                <WhiteSpace y={3} />
+                <WhiteSpace y={2} />
+                <Ellipsis size={15} color='white' />
+                <WhiteSpace y={1} />
               </div>
         </Border>
     )
@@ -297,6 +320,7 @@ class ProfileInfo extends Component {
         <Row>
           <Column width={3/4}>
             <Border
+              border={2}
               p={10}
               borderColor={accent}
               style={{borderRadius: '5px'}}>
@@ -311,6 +335,7 @@ class ProfileInfo extends Component {
                       <Heading
                         is='h2'
                         fontSize={[ 4, 5, 6 ]} align='right' color={dark}>
+                        <Dot bg={accent} size={20}/> <Dot bg={accent} size={20}/> <Dot bg={accent} size={20}/> <Dot bg='white' size={10}/>
                         {this.props.first} {this.props.last}
                       </Heading>
                       <Text color={accent} align='right'>Student at Harvard University </Text>
@@ -320,10 +345,10 @@ class ProfileInfo extends Component {
               </Border>
             <WhiteSpace y={2} />
             <Row >
-              <Column width={1/3} bg={accent} style={{borderRadius: '5px'}} p={-3}>
-              <Border p={10} bg={accent} borderColor={accent} color={dark} >
-                <UserInfo />
-              </Border>
+              <Column width={1/3} style={{borderRadius: '5px'}} justify="flex-end">
+                <Border bg={accent} borderColor={accent} color={dark} style={{borderRadius: '5px'}} p={10} alignItems='stretch'>
+                  <UserInfo />
+                </Border>
               </Column>
               <Column width={2/3}>
                 <AboutMe />
@@ -334,9 +359,7 @@ class ProfileInfo extends Component {
           <Organizations />
         </Column>
       </Row>
-
-
-      </div>
+    </div>
     )
   }
 }
