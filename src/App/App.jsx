@@ -12,7 +12,8 @@ import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import { TestPage } from '../TestPage';
-import { MatchPage } from '../MatchPage'
+import { MatchPage } from '../MatchPage';
+
 
 // Apollo
 import { ApolloProvider } from 'react-apollo';
@@ -41,18 +42,20 @@ class App extends React.Component {
                             {alert.message &&
                                 <div className={`alert ${alert.type}`}>{alert.message}</div>
                             }
-                        {/* All routes can access Apollo if necessary. */}
-                        <ApolloProvider client = { Client }>
-                            <Router history={history}>
-                                <div>
-                                    <PrivateRoute exact path="/" component={HomePage} />
-                                    <Route path="/login" component={LoginPage} />
-                                    <Route path="/register" component={RegisterPage} />
-                                    <Route path="/test" component={TestPage} />
-                                    <Route path="/match" component={MatchPage} />
-                                </div>
-                            </Router>
-                        </ApolloProvider>
+
+                            {/* All routes can access Apollo if necessary. */}
+                            <ApolloProvider client = { Client }>
+                                <Router history={history}>
+                                    <div>
+                                        <PrivateRoute exact path="/" component={HomePage} />
+                                        <Route path="/login" component={LoginPage} />
+                                        <Route path="/register" component={RegisterPage} />
+                                        <Route path="/test" component={TestPage} />
+                                        <Route path="/match" component={MatchPage} />
+                                    </div>
+                                </Router>
+                            </ApolloProvider>
+                        </div>
                     </div>
                 </div>
             </div>
