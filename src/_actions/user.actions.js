@@ -27,7 +27,7 @@ function login(username, password) {
             .then(
                 user => {
                     dispatch(success(user));
-                    history.push('/');
+                    history.push('/match');
                 },
                 error => {
                     dispatch(failure(error));
@@ -54,8 +54,7 @@ function register(user) {
             .then(
                 user => {
                     dispatch(success());
-                    history.push('/login');
-                    dispatch(alertActions.success('Registration successful'));
+                    dispatch(alertActions.success('Registered. Welcome to Uneaux!'));
                 },
                 error => {
                     dispatch(failure(error));

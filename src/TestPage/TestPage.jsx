@@ -19,6 +19,7 @@ class TestPage extends React.Component {
 
         this.handleB1 = this.handleB1.bind(this);
         this.handleTestChildSubmit = this.handleTestChildSubmit.bind(this);
+
     }
 
     handleTestChildSubmit(data){
@@ -40,12 +41,20 @@ class TestPage extends React.Component {
 
 
     render() {
+        var firstName;
+        // If user is logged in, we'll get their first name.
+        if (this.props.user){
+            firstName = this.props.user.firstName;
+        }
+        else {
+            firstName = "Login for first name";
+        }
 
         return (
             <div>
 
                 <div className="col-md-6 col-md-offset-3">
-                    <h2>TestPage</h2>
+                    <h2>{ firstName }</h2>
                     <div>
                         <p>Button 1 increments this number: { this.state.text1} </p>
                         <button onClick={ this.handleB1 }>Button1: Change a TestPage state from TestPage.</button>
@@ -62,12 +71,13 @@ class TestPage extends React.Component {
     }
 }
 
-/* Below, registering is a filler. It modifies a state that is irrelevant to your
-component. Here, though, can you use mapStateToProps accordingly.*/
+/* Below, mapStateToProps is what will get our global store variables to be accessible here.
+    With this, you can now access this.props.user.firstName, for example.
+.*/
 function mapStateToProps(state) {
-    const { registering } = state.registration;
+    const { user } = state.authentication;
     return {
-        registering
+        user
     };
 }
 

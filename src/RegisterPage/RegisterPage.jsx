@@ -57,6 +57,7 @@ class RegisterPage extends React.Component {
         const { dispatch } = this.props;
         if (user.firstName && user.lastName && user.username && user.password) {
             dispatch(userActions.register(user));
+            dispatch(userActions.login(user.username, user.password));
         }
     }
 

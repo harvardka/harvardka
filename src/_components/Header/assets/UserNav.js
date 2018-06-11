@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from '../Header';
-import { Navbar, Nav , NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
+import { Navbar, Nav , NavItem, NavDropdown, MenuItem, Image} from 'react-bootstrap';
 
 class UserNav extends React.Component{
     constructor(props) {
@@ -14,8 +14,11 @@ class UserNav extends React.Component{
             <div>
                 {this.props.isLoggedIn
                 ?<Nav  >
-                    <NavDropdown eventKey={3} title= { this.props.firstName} id="basic-nav-dropdown">
-                            <MenuItem eventKey={3.1} href = "/profile">Me</MenuItem>
+                    <NavItem href='/profile' >
+                        <Image width="40" height="40" responsive circle src={this.props.pictureUrl}/>
+                    </NavItem>
+                    <NavDropdown eventKey={3} title= {this.props.firstName} id="basic-nav-dropdown">
+                            <MenuItem eventKey={3.1}>Me</MenuItem>
                             <MenuItem divider />
                             <MenuItem eventKey={3.2} href = "/login">Logout</MenuItem>
                     </NavDropdown>
