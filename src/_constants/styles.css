@@ -10,33 +10,10 @@ body {
   line-height: 1.5;
 }
 
+.btn{
+  color: #9FD356;
+}
+
 button:disabled {
   opacity: 0.5;
-}
-
-.flex-grid {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.flex-grid .third {
-  width: 32%;
-}
-
-.flex-grid .quarter {
-  width: 24%;
-}
-
-.flex-grid .fifth {
-  width: 19%;
-}
-
-.flex-grid .half {
-  width: 49%;
-}
-
-.flex-grid .center {
-  justify-content: center;
-  align-items: center;
 }
