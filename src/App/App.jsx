@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Header } from '../_components/Header';
 
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
@@ -32,13 +33,14 @@ class App extends React.Component {
     render() {
         const { alert } = this.props;
         return (
-            <div className="jumbotron">
-                <div className="container">
-                    <div className="col-sm-8 col-sm-offset-2">
-                        {alert.message &&
-                            <div className={`alert ${alert.type}`}>{alert.message}</div>
-                        }
-
+            <div>
+                < Header / >
+                <div className="jumbotron" >
+                    <div className="container">
+                        <div className="col-sm-8 col-sm-offset-2">
+                            {alert.message &&
+                                <div className={`alert ${alert.type}`}>{alert.message}</div>
+                            }
                         {/* All routes can access Apollo if necessary. */}
                         <ApolloProvider client = { Client }>
                             <Router history={history}>

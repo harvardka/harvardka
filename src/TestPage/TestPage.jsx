@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../_actions';
 
-
 // Assets
 import TestChild from './assets/TestChild';
 
@@ -43,17 +42,20 @@ class TestPage extends React.Component {
     render() {
 
         return (
-            <div className="col-md-6 col-md-offset-3">
-                <h2>TestPage</h2>
-                <div>
-                    <p>Button 1 increments this number: { this.state.text1} </p>
-                    <button onClick={ this.handleB1 }>Button1: Change a TestPage state from TestPage.</button>
-                </div>
-                <br/><br/><br/>
+            <div>
 
-                <div>
-                    <p>Button 2 changes this text: {this.state.text2}</p>
-                    < TestChild text3 = { this.state.text3 } handleTestChildSubmit = {this.handleTestChildSubmit} / >
+                <div className="col-md-6 col-md-offset-3">
+                    <h2>TestPage</h2>
+                    <div>
+                        <p>Button 1 increments this number: { this.state.text1} </p>
+                        <button onClick={ this.handleB1 }>Button1: Change a TestPage state from TestPage.</button>
+                    </div>
+                    <br/><br/><br/>
+
+                    <div>
+                        <p>Button 2 changes this text: {this.state.text2}</p>
+                        < TestChild text3 = { this.state.text3 } handleTestChildSubmit = {this.handleTestChildSubmit} / >
+                    </div>
                 </div>
             </div>
         );
