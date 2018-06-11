@@ -52,7 +52,7 @@ class App extends React.Component {
                                           <Route path="/login" component={LoginPage} />
                                           <Route path="/register" component={RegisterPage} />
                                           <Route path="/test" component={TestPage} />
-                                          <Route path="/match" component={MatchPage} />
+                                          <PrivateRoute exact  path="/match" component={MatchPage} />
                                           <PrivateRoute exact path="/profile" component={ProfilePage} />
                                         </div>
                                     </div>
