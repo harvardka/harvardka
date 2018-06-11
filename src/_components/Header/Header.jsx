@@ -38,7 +38,6 @@ class Header extends React.Component {
                 lastName: this.props.user.lastName,
                 pictureUrl: this.props.user.pictureUrl,
             });
-            // alert(this.state.imageSource);
         }
         else {
             this.setState({
