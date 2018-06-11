@@ -46,13 +46,12 @@ class App extends React.Component {
                             <ApolloProvider client = { Client }>
                                 <Router history={history}>
                                     <div>
-                                        <div className="col-sm-8 col-sm-offset-2">
+                                        <div className="col-sm-10 col-sm-offset-1">
                                           <PrivateRoute exact path="/" component={HomePage} />
                                           <Route path="/login" component={LoginPage} />
                                           <Route path="/register" component={RegisterPage} />
                                           <Route path="/test" component={TestPage} />
-                                        </div>
-                                        <div>
+
                                           <PrivateRoute exact path="/profile" component={ProfilePage} />
                                         </div>
                                     </div>

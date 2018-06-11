@@ -3,18 +3,12 @@ import {Flex, Box, Heading, Row, Column, Subhead, Border, Divider, Text, Input, 
 import {Alert, strong, Image, Button, FormGroup, FormControl, ControlLabel} from 'react-bootstrap';
 import { store } from '../../_helpers/store';
 import { userActions } from '../../_actions';
-import TextInput from './TextInput'
-
-//import user from './user.jpg';
+import TextInput from './TextInput';
 
 const dark = '#59565F';
 
 //green
 const accent = '#9FD356';
-//const accent = dark;
-
-//orange
-//const accent = '#FCAF58'
 
 class WhiteSpace extends React.Component {
   render () {
@@ -51,7 +45,7 @@ class Descr2 extends Component {
       <Box>
         <div className='text-center col-sm-9 col-sm-offset-2'>
           <Text fontWeight='bold' color={accent} fontSize={14}>{this.props.main}</Text>
-          <p >{this.props.sub}</p>
+          <p>{this.props.sub}</p>
         </div>
       </Box>
     )
@@ -102,8 +96,9 @@ class AboutMe extends Component {
     return (
       <Border
         p={10}
-        borderColor={accent}>
-        <WhiteSpace y={2} />
+        borderColor={accent}
+        style={{borderRadius: '5px'}}>
+        <WhiteSpace y={1} />
         <Subhead align='center' color={accent}>About Me</Subhead>
         <Divider
           w={1}
@@ -125,7 +120,7 @@ class AboutMe extends Component {
                 <TextInput id='funFact' name='funFact' value={this.state.funFact} onChange={this.handleChange}/>
               </Box>
             </Flex>
-            <WhiteSpace y={2} />
+            <WhiteSpace y={1} />
             <Flex>
               <Box width={1/2} px={3}>
                 <Text fontWeight='bold' color={accent} fontSize={14}>If I won $1 million...</Text>
@@ -136,13 +131,13 @@ class AboutMe extends Component {
                 <TextInput id='thing' name='thing' value={this.state.thing} onChange={this.handleChange}/>
               </Box>
             </Flex>
-            <WhiteSpace y={3} />
+            <WhiteSpace y={2} />
             <div className='text-center'>
               <Button bsSize='small' onClick={this.handleSubmit}>Save</Button>
             </div>
           </div>
           : <div>
-            <Flex>
+            <Flex color={dark}>
               <Box width={1/2}>
                 <Descr2 main={'My Interests'} sub={this.state.interests} />
               </Box>
@@ -151,7 +146,7 @@ class AboutMe extends Component {
               </Box>
             </Flex>
             <WhiteSpace y={2} />
-            <Flex>
+            <Flex color={dark}>
               <Box width={1/2}>
                 <Descr2 main={'If I won $1 million...'} sub={this.state.million} />
               </Box>
@@ -266,12 +261,12 @@ class Organizations extends Component {
   render () {
     return (
       <Border
-        p={10}
+        p={15}
         borderColor={accent}
-        bg={accent}>
-          <Box color={dark} p={10} height={1}>
+        bg={accent}
+        style={{borderRadius: '5px'}}>
               <div className="text-center">
-                <WhiteSpace y={2} />
+                <WhiteSpace y={3} />
                 <Subhead color='white'>Organizations</Subhead>
                 <WhiteSpace y={1} />
                 <Divider></Divider>
@@ -282,9 +277,8 @@ class Organizations extends Component {
                 <CoName />
                 <WhiteSpace y={1} />
                 <Button bsSize='small' >Add Organization</Button>
-                <WhiteSpace y={2} />
+                <WhiteSpace y={3} />
               </div>
-          </Box>
         </Border>
     )
   }
@@ -304,15 +298,16 @@ class ProfileInfo extends Component {
           <Column width={3/4}>
             <Border
               p={10}
-              borderColor={accent}>
+              borderColor={accent}
+              style={{borderRadius: '5px'}}>
             <div>
-              <Flex>
-                  <Box width={1/6}  p={15}>
+              <Flex align="center" >
+                  <Box width={1/5}  p={10}>
                     <div className="text-center">
-                      <Image src={this.props.pic}/>
+                      <Image src={this.props.pic} width='140' height='140' rounded/>
                     </div>
                   </Box>
-                  <Box p={40} width={5/6}>
+                  <Box p={20} width={5/6}>
                       <Heading
                         is='h2'
                         fontSize={[ 4, 5, 6 ]} align='right' color={dark}>
@@ -324,21 +319,14 @@ class ProfileInfo extends Component {
               </div>
               </Border>
             <WhiteSpace y={2} />
-            <Row>
-              <Column width={1/3}>
-              <Border
-                p={10}
-                bg={accent}
-                borderColor={accent}
-                color={dark}
-              >
+            <Row >
+              <Column width={1/3} bg={accent} style={{borderRadius: '5px'}} p={-3}>
+              <Border p={10} bg={accent} borderColor={accent} color={dark} >
                 <UserInfo />
               </Border>
               </Column>
               <Column width={2/3}>
-
                 <AboutMe />
-
               </Column>
             </Row>
         </Column>

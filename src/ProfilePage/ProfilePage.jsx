@@ -15,14 +15,14 @@ const Div = styled.div`
 `;
 
 class ProfilePage extends React.Component {
-
     render() {
+        alert(this.props.user.pictureUrl)
         return (
             <Div>
                 <ProfileInfo
                     first={store.getState().authentication.user.firstName}
                     last={store.getState().authentication.user.lastName}
-                    pic={store.getState().authentication.user.pictureUrl}
+                    pic={this.props.user.pictureUrl}
                 />
             </Div>
         );
@@ -32,9 +32,9 @@ class ProfilePage extends React.Component {
 /* Below, registering is a filler. It modifies a state that is irrelevant to your
 component. Here, though, can you use mapStateToProps accordingly.*/
 function mapStateToProps(state) {
-    const { registering } = state.registration;
+    const { user } = state.authentication;
     return {
-        registering
+        user
     };
 }
 
