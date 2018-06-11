@@ -20,21 +20,22 @@ class ProfilePage extends React.Component {
         return (
             <Div>
                 <ProfileInfo
-                    first={store.getState().authentication.user.firstName}
-                    last={store.getState().authentication.user.lastName}
-                    pic={store.getState().authentication.user.pictureUrl}
+                    first={this.props.user.firstName}
+                    last={this.props.user.lastName}
+                    pic={this.props.user.pictureUrl}
                 />
             </Div>
         );
     }
 }
 
-/* Below, registering is a filler. It modifies a state that is irrelevant to your
-component. Here, though, can you use mapStateToProps accordingly.*/
+/* Below, mapStateToProps is what will get our global store variables to be accessible here.
+    With this, you can now access this.props.user.firstName, for example.
+.*/
 function mapStateToProps(state) {
-    const { registering } = state.registration;
+    const { user } = state.authentication;
     return {
-        registering
+        user
     };
 }
 
