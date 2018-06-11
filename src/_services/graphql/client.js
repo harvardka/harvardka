@@ -13,7 +13,8 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 const httpLink = createHttpLink({
-  uri: 'http://104.196.196.64:7474/graphql/'
+  // uri: 'http://104.196.196.64:7474/graphql/'
+  uri: 'http://eng-cache-198419.appspot.com/graphql'
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -23,7 +24,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: 'Basic bmVvNGo6Y29tbW9uaw=='
+      // authorization: 'Basic bmVvNGo6Y29tbW9uaw=='
     }
   };
 });
