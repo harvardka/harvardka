@@ -15,7 +15,7 @@ class UserNav extends React.Component{
                 {this.props.isLoggedIn
                 ?<Nav  >
                     <NavDropdown eventKey={3} title= { this.props.firstName} id="basic-nav-dropdown">
-                            <MenuItem eventKey={3.1}>Me</MenuItem>
+                            <MenuItem eventKey={3.1} href = "/profile">Me</MenuItem>
                             <MenuItem divider />
                             <MenuItem eventKey={3.2} href = "/login">Logout</MenuItem>
                     </NavDropdown>

@@ -12,8 +12,8 @@ import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import { TestPage } from '../TestPage';
+import { ProfilePage } from '../ProfilePage'
 import { MatchPage } from '../MatchPage';
-
 
 // Apollo
 import { ApolloProvider } from 'react-apollo';
@@ -36,9 +36,9 @@ class App extends React.Component {
         return (
             <div>
                 < Header / >
-                <div className="jumbotron" >
-                    <div className="container">
-                        <div className="col-sm-8 col-sm-offset-2">
+                <div>
+                    <div>
+                        <div>
                             {alert.message &&
                                 <div className={`alert ${alert.type}`}>{alert.message}</div>
                             }
@@ -47,11 +47,14 @@ class App extends React.Component {
                             <ApolloProvider client = { Client }>
                                 <Router history={history}>
                                     <div>
-                                        <PrivateRoute exact path="/" component={HomePage} />
-                                        <Route path="/login" component={LoginPage} />
-                                        <Route path="/register" component={RegisterPage} />
-                                        <Route path="/test" component={TestPage} />
-                                        <Route path="/match" component={MatchPage} />
+                                        <div className="col-sm-10 col-sm-offset-1">
+                                          <PrivateRoute exact path="/" component={HomePage} />
+                                          <Route path="/login" component={LoginPage} />
+                                          <Route path="/register" component={RegisterPage} />
+                                          <Route path="/test" component={TestPage} />
+                                          <Route path="/match" component={MatchPage} />
+                                          <PrivateRoute exact path="/profile" component={ProfilePage} />
+                                        </div>
                                     </div>
                                 </Router>
                             </ApolloProvider>
