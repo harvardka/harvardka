@@ -13,11 +13,8 @@ import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import { TestPage } from '../TestPage';
 import { ProfilePage } from '../ProfilePage'
-<<<<<<< Updated upstream
 import { MatchPage } from '../MatchPage';
-=======
 import '../_constants/styles.css'
->>>>>>> Stashed changes
 
 // Apollo
 import { ApolloProvider } from 'react-apollo';
