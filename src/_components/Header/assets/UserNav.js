@@ -14,7 +14,10 @@ class UserNav extends React.Component{
             <div>
                 {this.props.isLoggedIn
                 ?<Nav  >
-                    <NavDropdown eventKey={3} title= {<div><Image responsive circle src={this.props.pictureUrl}/>{this.props.firstName}</div> } id="basic-nav-dropdown">
+                    <NavItem href='/profile' >
+                        <Image width="40" height="40" responsive circle src={this.props.pictureUrl}/>
+                    </NavItem>
+                    <NavDropdown eventKey={3} title= {this.props.firstName} id="basic-nav-dropdown">
                             <MenuItem eventKey={3.1}>Me</MenuItem>
                             <MenuItem divider />
                             <MenuItem eventKey={3.2} href = "/login">Logout</MenuItem>
