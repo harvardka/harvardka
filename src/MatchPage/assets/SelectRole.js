@@ -30,8 +30,11 @@ class SelectRole extends React.Component{
         console.log('mid', this.props);
         return(
                 <Box width={1}>
-                <h2>What are you looking for?</h2>
+                <div className='text-center'>
+                  <h2>What are you looking for?</h2>
+                </div>
                     <Flex justifyContent='center'>
+
                         <Box width={1/2}>
                             <Flex justifyContent='space-between'>
                                 < MatchSelector label='Investor' size='lg' handleSelect={this.handleSelect} selected={this.state.selected}/>

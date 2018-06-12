@@ -14,6 +14,7 @@ import { RegisterPage } from '../RegisterPage';
 import { TestPage } from '../TestPage';
 import { ProfilePage } from '../ProfilePage'
 import { MatchPage } from '../MatchPage';
+import '../_constants/styles.css'
 
 // Apollo
 import { ApolloProvider } from 'react-apollo';

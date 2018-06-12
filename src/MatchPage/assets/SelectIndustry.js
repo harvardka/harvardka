@@ -101,7 +101,9 @@ class SelectIndustry extends React.Component{
                 //     </Flex>
                 // </Box>
             <Box width={1}>
-                <h2>What is your industry?</h2>
+                <div className='text-center'>
+                  <h2>What is your industry?</h2>
+                </div>
                 <Flex justifyContent='space-evenly' flexWrap='wrap'>
                     {industries.map((industry) =>
                         < MatchSelector key={industry} label={industry} size='sm' handleSelect={this.handleSelect}/>

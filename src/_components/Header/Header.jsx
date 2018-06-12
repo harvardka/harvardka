@@ -49,10 +49,10 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <Navbar inverse  collapseOnSelect >
-                    <Navbar.Header>
+                <Navbar inverse collapseOnSelect>
+                    <Navbar.Header className='red'>
                         <Navbar.Brand>
-                            <a href="/">handshake</a>
+                            <a href="/" className="nav-center">handshake</a>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>

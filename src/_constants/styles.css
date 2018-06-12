@@ -1,13 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 html {
   font-size: 100%;
+
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Maven Pro', sans-serif;
-  font-size: 1rem;
+  font-size: 0.85rem;
   line-height: 1.5;
+  color: #59565F;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-center {
+  line-height: 35px;
+  vertical-align: middle;
 }
 
 .btn{
