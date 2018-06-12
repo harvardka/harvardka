@@ -8,12 +8,12 @@ import { Flex, Box } from 'grid-styled'
 import MatchSelector from './MatchSelector';
 
 const rounds = [
-    "series_a",
-    "series_b",
-    "series_c",
-    "series_d",
-    "series_e",
-    "seed"
+    "Series A",
+    "Series B",
+    "Series C",
+    "Series D",
+    "Series E",
+    "Seed"
 ]
 
 class SelectFunding extends React.Component{
@@ -28,8 +28,10 @@ class SelectFunding extends React.Component{
     }
 
     handleSelect(label){
-        this.setState({ selected: label });
-        this.props.updateFlow({selectedFunding: label})
+        const stored_label = (label.toLowerCase()).replace(/ /g,"_");
+        console.log('my label is', stored_label);
+        this.setState({ selected: stored_label });
+        this.props.updateFlow({selectedFunding: stored_label})
     }
 
     render(){
