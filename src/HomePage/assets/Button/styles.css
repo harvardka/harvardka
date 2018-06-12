@@ -7,13 +7,13 @@ body{
     transition: box-shadow .3s;
     width: 175px;
     height: 45px;
-    margin: 50px;
+    /* margin: 50px; */
     border-radius:5px;
     background: rgb(59, 208, 214);
     color: #FAFFFD;
     float: left;
-    
+
   }
   .box:hover {
-    box-shadow: 0 0 11px rgba(33,33,33,.9); 
+    box-shadow: 0 0 11px rgba(33,33,33,.9);
   }

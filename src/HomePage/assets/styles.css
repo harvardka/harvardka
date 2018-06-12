@@ -14,7 +14,8 @@ img {
   filter: grayscale(30%);
 
 }
+
 div.button {
-  position: relative;
-  margin-top: -55em;
+  /* position: relative; */
+  /* margin-top: -55em; */
 }
