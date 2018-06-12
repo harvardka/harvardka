@@ -14,6 +14,10 @@ import { RegisterPage } from '../RegisterPage';
 import { TestPage } from '../TestPage';
 import { ProfilePage } from '../ProfilePage'
 import { MatchPage } from '../MatchPage';
+import { AdminPage } from '../AdminPage';
+import { AboutPage } from '../AboutPage';
+import { TeamPage } from '../TeamPage';
+
 import '../_constants/styles.css'
 
 // Apollo
@@ -53,7 +57,10 @@ class App extends React.Component {
                                           <Route path="/login" component={LoginPage} />
                                           <Route path="/register" component={RegisterPage} />
                                           <Route path="/test" component={TestPage} />
-                                          <PrivateRoute exact  path="/match" component={MatchPage} />
+                                          <Route path="/about" component={AboutPage} />
+                                          <Route path="/team" component={TeamPage} />
+                                          <PrivateRoute exact path="/admin" component={AdminPage} />
+                                          <PrivateRoute exact path="/match" component={MatchPage} />
                                           <PrivateRoute exact path="/profile" component={ProfilePage} />
                                         </div>
                                     </div>

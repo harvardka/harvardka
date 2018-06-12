@@ -1,0 +1,49 @@
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50vh;
+    color: #000;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    align-items: center;
+    justify-content: center;
+    border-top: 5px solid #000;
+    color: black;
+}
+
+.images {
+width: 105vw;
+left: 50%;
+transform: translateX(-4%);
+}
+
+#onHover:hover {
+transition: .9s ease;
+opacity: .2; 
+}
+
+.headshot-bio {
+margin: 5px 1.5%;
+width: 32%;
+height:32%;
+margin: 0;
+/* opacity: .5;  */
+filter: grayscale(60%);
+border-style: solid;
+border-width: 0.1px;
+}
+
+div.footer {
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 15px;
+margin: 80px;
+font-weight: 600;
+}

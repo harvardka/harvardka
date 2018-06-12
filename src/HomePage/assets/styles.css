@@ -1,0 +1,20 @@
+@font-face {
+  font-family:'Maven Pro';
+  src: url('https://fonts.googleapis.com/css?family=Maven+Pro');
+}
+
+div.header {
+  margin-left: 4%;
+  margin-right: 4%
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  filter: grayscale(30%);
+
+}
+div.button {
+  position: relative;
+  margin-top: -55em;
+}
