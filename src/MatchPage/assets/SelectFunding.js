@@ -49,7 +49,9 @@ class SelectFunding extends React.Component{
                 //     </Flex>
                 // </Box>
             <Box width={1}>
-                <h2>What is your funding round?</h2>
+                <div className='text-center'>
+                  <h2>What is your funding round?</h2>
+                </div>
                 <Flex justifyContent='space-evenly' flexWrap='wrap'>
                     {rounds.map((round) =>
                         < MatchSelector key={round} label={round} size='sm' handleSelect={this.handleSelect} selected={this.state.selected}/>

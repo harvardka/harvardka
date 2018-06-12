@@ -13,11 +13,11 @@ class UserNav extends React.Component{
         return(
             <div>
                 {this.props.isLoggedIn
-                ?<Nav  >
-                    <NavItem href='/profile' >
-                        <Image width="40" height="40" responsive circle src={this.props.pictureUrl}/>
+                ?<Nav>
+                    <NavItem href='/profile'>
+                        <Image width="35" height="35" responsive circle src={this.props.pictureUrl}/>
                     </NavItem>
-                    <NavDropdown eventKey={3} title= {this.props.firstName} id="basic-nav-dropdown">
+                    <NavDropdown eventKey={3} title= {<span className='nav-center'>{this.props.firstName}</span>} id="basic-nav-dropdown">
                             <MenuItem href="/profile"eventKey={3.1}>Me</MenuItem>
                             <MenuItem href="/match"eventKey={3.1}>Match</MenuItem>
                             <MenuItem divider />
