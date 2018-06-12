@@ -26,10 +26,10 @@ class InvestorModal extends React.Component {
             </Modal.Header>
             <Modal.Body>
               <p>{investor.description}</p>
-
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.handleClose}>Close</Button>
+                <Button bsStyle="primary"><a href={"mailto:"+investor.email}>Email {investor.companyName}</a></Button>
+                <Button onClick={this.handleClose}>Close</Button>
             </Modal.Footer>
           </Modal>
       );

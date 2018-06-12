@@ -22,6 +22,7 @@ export const getInvestor = gql`
       logoUrl
       city
       description
+      email
     }
   }
 `;
