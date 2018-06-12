@@ -16,7 +16,6 @@ const Div = styled.div`
 
 class ProfilePage extends React.Component {
     render() {
-        alert(this.props.user.pictureUrl)
         return (
             <Div>
                 <ProfileInfo

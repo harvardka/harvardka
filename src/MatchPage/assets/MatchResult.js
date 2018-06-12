@@ -8,6 +8,7 @@ import { compose, graphql } from 'react-apollo';
 
 // assets
 import InvestorCard from './InvestorCard'
+import InvestorModal from './InvestorModal'
 
 
 class MatchResult extends React.Component{
@@ -15,12 +16,19 @@ class MatchResult extends React.Component{
         super(props);
 
         this.state = {
-            loading: false
+            loading: false,
+            showModal: false,
+            selectedInvestor: {}
         };
 
         this.handleSelect = this.handleSelect.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+
     }
 
+    toggleModal(investor){
+        this.setState({ showModal: !this.state.showModal, selectedInvestor: investor})
+    }
 
     handleSelect(label){
         console.log(label)
@@ -29,7 +37,6 @@ class MatchResult extends React.Component{
     }
 
     render(){
-        console.log('my props are', this.props);
         const params = this.props.params
         if (!this.props.loading){
             return(
@@ -37,9 +44,10 @@ class MatchResult extends React.Component{
                         <h1>Your Matches</h1>
                         <Flex justifyContent='space-between' flexWrap='wrap'>
                             {this.props.investors.map((investor) =>
-                                < InvestorCard investor={investor} key={investor}/>
+                                < InvestorCard investor={investor} key={investor.companyName} toggleModal={this.toggleModal} />
                             )}
                     </Flex>
+                    < InvestorModal investor={this.state.selectedInvestor} toggleModal={this.toggleModal} show={this.state.showModal}/>
                     </Box>
 
             )

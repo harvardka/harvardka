@@ -27,7 +27,8 @@ function login(username, password) {
             .then(
                 user => {
                     dispatch(success(user));
-                    history.push('/match');
+                    history.push('/profile');
+                    dispatch(alertActions.success("Registered! Welcome to Handshake! Complete your profile below!"));
                 },
                 error => {
                     dispatch(failure(error));

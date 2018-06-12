@@ -18,7 +18,8 @@ class UserNav extends React.Component{
                         <Image width="40" height="40" responsive circle src={this.props.pictureUrl}/>
                     </NavItem>
                     <NavDropdown eventKey={3} title= {this.props.firstName} id="basic-nav-dropdown">
-                            <MenuItem eventKey={3.1}>Me</MenuItem>
+                            <MenuItem href="/profile"eventKey={3.1}>Me</MenuItem>
+                            <MenuItem href="/match"eventKey={3.1}>Match</MenuItem>
                             <MenuItem divider />
                             <MenuItem eventKey={3.2} href = "/login">Logout</MenuItem>
                     </NavDropdown>

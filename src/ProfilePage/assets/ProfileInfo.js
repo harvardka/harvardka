@@ -108,7 +108,7 @@ class AboutMe extends Component {
     return (
       <Border
         p={10}
-        border={2}
+        border={1.5}
         borderColor={accent}
         style={{borderRadius: '5px'}}>
         <WhiteSpace y={1} />
@@ -175,6 +175,13 @@ class AboutMe extends Component {
           </div>
         }
         <WhiteSpace y={2} />
+        <div className='text-center'>
+            <Ellipsis size={12.5} bg={accent} />
+            <Ellipsis size={15} bg={accent} />
+            <Ellipsis size={17} bg={accent} />
+            <Ellipsis size={15} bg={accent} />
+            <Ellipsis size={12.5} bg={accent} />
+        </div>
         </Border>
     )
   }
@@ -320,7 +327,7 @@ class ProfileInfo extends Component {
         <Row>
           <Column width={3/4}>
             <Border
-              border={2}
+              border={1.5}
               p={10}
               borderColor={accent}
               style={{borderRadius: '5px'}}>
