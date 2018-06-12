@@ -21,6 +21,7 @@ export const getInvestor = gql`
       investmentCount
       logoUrl
       city
+      description
     }
   }
 `;
