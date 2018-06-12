@@ -52,7 +52,7 @@ class Header extends React.Component {
                 <Navbar inverse  collapseOnSelect >
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="/">Uneaux</a>
+                            <a href="/">handshake</a>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>

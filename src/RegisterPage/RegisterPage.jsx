@@ -83,7 +83,7 @@ class RegisterPage extends React.Component {
                 <form name="form" onSubmit={this.handleSubmit}>
 
                     <div>
-                        <Image circle src={this.state.user.pictureUrl}/>
+                        <Image height="100" width="100" circle src={this.state.user.pictureUrl}/>
                         <br/><br/>
                     </div>
                     <div className={'form-group' + (submitted && !user.firstName ? ' has-error' : '')}>
