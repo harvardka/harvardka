@@ -49,8 +49,8 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <Navbar inverse collapseOnSelect>
-                    <Navbar.Header className='red'>
+                <Navbar fixedTop bsStyle="white" collapseOnSelect>
+                    <Navbar.Header>
                         <Navbar.Brand>
                             <a href="/" className="nav-center">handshake</a>
                         </Navbar.Brand>
