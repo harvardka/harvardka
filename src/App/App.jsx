@@ -6,6 +6,7 @@ import { Header } from '../_components/Header';
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
 import { PrivateRoute } from '../_components';
+import { Banner } from 'rebass';
 
 // Pages
 import { HomePage } from '../HomePage';
@@ -41,6 +42,7 @@ class App extends React.Component {
         return (
             <div>
                 < Header / >
+                < Banner bg='white' minHeight='25%' />
                 <div>
                     <div>
                         <div>
