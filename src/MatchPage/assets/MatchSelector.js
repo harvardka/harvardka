@@ -27,9 +27,10 @@ class MatchSelector extends React.Component{
     //     this.setState({ [name]: value });
     // }
     render(){
+            const is_clicked = this.state.clicked || this.props.clicked
             return(
-                <button type='button' style={{margin: '10px', color: '#59565F', backgroundColor: this.state.clicked ? '#6b9333':'#9FD356'}} className='btn' onClick={this.selectRole.bind(this)}>
-                    <span className={"glyphicon " + ((this.state.clicked) ? 'glyphicon-check':'glyphicon-unchecked')}></span> {this.props.label}
+                <button type='button' style={{margin: '10px', color: '#59565F', backgroundColor: is_clicked ? '#6b9333':'#9FD356'}} className='btn' onClick={this.selectRole.bind(this)}>
+                    <span className={"glyphicon " + ((is_clicked) ? 'glyphicon-check':'glyphicon-unchecked')}></span> {this.props.label}
                 </button>
             )
 //                 <button type='button' style={{margin: '10px', color: '#59565F', backgroundColor: (this.props.selected == this.props.label) ? '#6b9333':'#9FD356'}} className='btn' onClick={this.selectRole.bind(this)}>

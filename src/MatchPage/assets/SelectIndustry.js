@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MatchPage from '../MatchPage';
-import { Flex, Box } from 'grid-styled'
+import { Flex, Box } from 'grid-styled';
+import {FormControl} from 'react-bootstrap';
 
 // assets
 import MatchSelector from './MatchSelector';
@@ -71,10 +72,14 @@ class SelectIndustry extends React.Component{
         super(props);
 
         this.state = {
-            selected: new Set([])
+            selected: new Set([]),
+            search_term: '',
+            active_industries: industries
         };
 
         this.handleSelect = this.handleSelect.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+
     }
 
     handleSelect(label){
@@ -86,7 +91,24 @@ class SelectIndustry extends React.Component{
         this.props.updateFlow({selectedIndustry: this.state.selected})
     }
 
+    filterIndustries(str){
+        const exp = RegExp(str, 'gi')
+        return industries.filter(industry => exp.test(industry))
+    }
+
+    handleChange(e){
+        const str = e.target.value
+        this.setState({search_term: e});
+        if(str==''){
+            this.setState({active_industries: industries})
+        }else{
+            this.setState({active_industries: this.filterIndustries(str)})
+        }
+    }
+
     render(){
+        console.log('S', this.state.selected);
+        const industry_list = [...this.state.selected];
         return(
                 // <Box width={1}>
                 //
@@ -102,12 +124,25 @@ class SelectIndustry extends React.Component{
                 // </Box>
             <Box width={1}>
                 <div className='text-center'>
-                  <h2>What is your industry?</h2>
+                  <h2>What are your industries?</h2>
+                            <FormControl
+                    type="text"
+                    value={this.state.value}
+                    placeholder="Find your industry"
+                    onChange={this.handleChange}
+                  />
                 </div>
                 <Flex justifyContent='space-evenly' flexWrap='wrap'>
-                    {industries.map((industry) =>
-                        < MatchSelector key={industry} label={industry} size='sm' handleSelect={this.handleSelect}/>
+                    {industry_list.map((industry) =>
+                        < MatchSelector clicked='true' key={industry} label={industry} size='sm' handleSelect={this.handleSelect}/>
                     )}
+                </Flex>
+                <Flex justifyContent='space-evenly' flexWrap='wrap'>
+                    {this.state.active_industries.map((industry) => {
+                        if(!this.state.selected.has(industry)){
+                            return(< MatchSelector key={industry} label={industry} size='sm' handleSelect={this.handleSelect}/>);
+                        }
+                    })}
                 </Flex>
             </Box>
         )
