@@ -124,11 +124,11 @@ class SelectIndustry extends React.Component{
                 // </Box>
             <Box width={1}>
                 <div className='text-center'>
-                  <h2>What is your industry?</h2>
+                  <h2>What are your industries?</h2>
                             <FormControl
                     type="text"
                     value={this.state.value}
-                    placeholder="Enter text"
+                    placeholder="Find your industry"
                     onChange={this.handleChange}
                   />
                 </div>
