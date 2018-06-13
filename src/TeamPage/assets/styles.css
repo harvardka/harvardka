@@ -1,9 +1,9 @@
 .title {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 50vh;
+    height: 60vh;
     color: #000;
 }
 
@@ -18,32 +18,85 @@
 }
 
 .images {
-width: 105vw;
-left: 50%;
-transform: translateX(-4%);
+width: 100%;
+justify-content: center;
+/* transform: translateX(-7%); */
+/* width: 105vw; */
+/* left: 50%; */
 }
 
-#onHover:hover {
+/* #onHover:hover {
 transition: .9s ease;
-opacity: .2; 
-}
+opacity: .2;
+} */
+
 
 .headshot-bio {
 margin: 5px 1.5%;
-width: 32%;
-height:32%;
+width: 33%;
+height:33%;
 margin: 0;
-/* opacity: .5;  */
+/* opacity: .5; */
 filter: grayscale(60%);
-border-style: solid;
-border-width: 0.1px;
+/* border-style: solid;
+border-width: 0.1px; */
 }
 
+
 div.footer {
-display: flex;
+/* display: flex; */
 justify-content: center;
 align-items: center;
 font-size: 15px;
 margin: 80px;
 font-weight: 600;
+text-align: center;
+}
+
+.container1 {
+  position: relative;
+  width: 33.3%;
+  float: left;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  border: 7px solid white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .9s ease;
+  background-color: #000000;
+  border: 7px solid white;
+}
+
+.container1:hover .overlay {
+  opacity: 0.6;
+}
+
+.text {
+  color: white;
+  font-size: 17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.imageBox {
+  justify-content: center;
 }

@@ -13,6 +13,18 @@ import Zia from './assets/images/zia.jpg';
 import Myungin from './assets/images/myungin.jpg';
 import './assets/styles.css';
 
+class Card extends React.Component {
+    render() {
+      return(
+          <div className="container1">
+            <img src={this.props.src} alt="Avatar" className="image" />
+            <div className="overlay">
+              <div className="text">{this.props.name} <br/> <em>{this.props.role}</em></div>
+            </div>
+          </div>
+      )
+    }
+}
 
 class TeamPage extends React.Component {
     constructor(props) {
@@ -35,18 +47,19 @@ class TeamPage extends React.Component {
                 </div>
 
                 <div className="images">
-                    <div>
-                        <img id="onHover" className="headshot-bio" src={Zia}/>
-                        <img id="onHover" className="headshot-bio" src={Theresa}/>
-                        <img id="onHover" className="headshot-bio" src={Shangyan}/>
-                    </div>
-                    <div>
-                        <img id="onHover" className="headshot-bio" src={Myungin}/>
-                        <img id="onHover" className="headshot-bio" src={Mohib}/>
-                        <img id="onHover" className="headshot-bio" src={Maddy}/>
-                    </div>
+                  <div>
+                    <Card src={Zia} name="Zia Haider Rahman" role="Vision"/>
+                    <Card src={Theresa} name="Theresa Nguyen" role="Design"/>
+                    <Card src={Shangyan} name="Shangyan Li" role="Back End"/>
+                  </div>
+                  <div>
+                    <Card src={Myungin} name="Myungin Lee" role="Business"/>
+                    <Card src={Mohib} name="Mohib Jafri" role="Product"/>
+                    <Card src={Maddy} name="Maddy Nakada" role="Front End"/>
+                  </div>
                 </div>
 
+                <br />
                 <div className="footer">Handshake 2018</div>
             </div>
         )

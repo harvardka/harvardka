@@ -335,10 +335,10 @@ class ProfileInfo extends Component {
               <Flex align="center" >
                   <Box width={1/5}  p={10}>
                     <div className="text-center">
-                      <Image src={this.props.pic} width='140' height='140' rounded/>
+                      <Image src={this.props.pic} width={'100%'} rounded/>
                     </div>
                   </Box>
-                  <Box p={20} width={5/6}>
+                  <Box p={20} width={4/5}>
                       <Heading
                         is='h2'
                         fontSize={[ 4, 5, 6 ]} align='right' color={dark}>
