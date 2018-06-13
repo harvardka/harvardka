@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Image, Navbar, Nav , NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 
 import { store } from '../../_helpers/store';
+import './styles.css'
 
 // Assets
 import UserNav  from './assets/UserNav';
@@ -49,7 +50,7 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <Navbar fixedTop bsStyle="white" collapseOnSelect>
+                <Navbar fixedTop bsStyle='default' collapseOnSelect>
                     <Navbar.Header>
                         <Navbar.Brand>
                             <a href="/" className="nav-center">handshake</a>
