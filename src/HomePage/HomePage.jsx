@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {Box, Flex, Column, Row} from 'rebass';
 import { Image } from 'react-bootstrap';
 
-import Button from './assets/Button';
+import EAButton from './assets/EAButton';
 import './assets/styles.css';
 
 
@@ -18,7 +18,7 @@ class HomePage extends React.Component {
                 <Row>
                     <Column width={1/3}>
                         <div className='button'>
-                          <Button id='button' />
+                          <EAButton id='button' />
                         </div>
                     </Column>
                     <Column width={2/3}>
