@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {Box, Flex, Column, Row} from 'rebass';
 import { Image } from 'react-bootstrap';
+import { Motion, spring } from 'react-motion';
 
 import EAButton from './assets/EAButton';
 import './assets/styles.css';
@@ -23,7 +24,25 @@ class HomePage extends React.Component {
                     </Column>
                     <Column width={2/3}>
                         <div className='img'>
-                            <Image responsive src={require('./assets/temp.jpg')} width="100%"/>
+                            <Motion
+                                defaultStyle={{ x: 4000, opacity: 0}}
+                                style= {{ x: spring(0), opacity: spring(1)}}
+                            >
+                                { style => (
+                                    <Image
+                                        responsive
+                                        src={require('./assets/temp.jpg')}
+                                        width="100%"
+                                        style={{
+                                            transform: `translate(${style.x}px)`,
+                                            opacity: style.opacity
+                                        }}
+                                    />
+                                )
+
+                                }
+
+                            </Motion>
                         </div>
                     </Column>
 
