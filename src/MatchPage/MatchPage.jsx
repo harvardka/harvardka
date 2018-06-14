@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../_actions';
-import { Flex, Box } from 'grid-styled'
+import { Flex, Box } from 'grid-styled';
+import {Button} from 'react-bootstrap';
 
 
 // Assets
@@ -21,10 +22,13 @@ class MatchPage extends React.Component {
             selectedRole: '',
             selectedIndustry: new Set([]),
             selectedDetail: '',
-            selectedFunding: ''
+            selectedFunding: '',
+            showResult: false
         };
 
         this.updateFlow = this.updateFlow.bind(this);
+        this.toggleResult = this.toggleResult.bind(this);
+
         // this.handleTestChildSubmit = this.handleTestChildSubmit.bind(this);
     }
 
@@ -40,6 +44,10 @@ class MatchPage extends React.Component {
         this.setState(pair)
     };
 
+    toggleResult(){
+        this.setState({showResult: true})
+    }
+
 
 
     render() {
@@ -48,7 +56,10 @@ class MatchPage extends React.Component {
                 < SelectRole updateFlow={this.updateFlow}/>
                 {(this.state.selectedRole != '') && < SelectIndustry updateFlow={this.updateFlow}/>}
                 {(this.state.selectedIndustry.size > 0) && < SelectFunding updateFlow={this.updateFlow}/>}
-                {(this.state.selectedFunding != '') && < MatchResult params={this.state}/>}
+                {(this.state.selectedFunding != '') &&
+                    (this.state.showResult ? (< MatchResult params={this.state}/>)
+                    : (<Button style={{marginTop: '20px', backgroundColor: '#9FD356', color: '#59565F'}} onClick={this.toggleResult}><h2>Match Me</h2></Button>)
+                )}
             </Flex>
         );
     }

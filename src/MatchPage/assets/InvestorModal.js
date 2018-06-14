@@ -28,7 +28,7 @@ class InvestorModal extends React.Component {
               <p>{investor.description}</p>
             </Modal.Body>
             <Modal.Footer>
-                <Button bsStyle="primary"><a href={"mailto:"+investor.email}>Email {investor.companyName}</a></Button>
+                {investor.email && <Button style={{color: '#59565F', backgroundColor: '#9FD356'}} href={"mailto:"+investor.email}>Email {investor.companyName}</Button>}
                 <Button onClick={this.handleClose}>Close</Button>
             </Modal.Footer>
           </Modal>
