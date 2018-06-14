@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import './styles.css';
 import { Button, Modal, Form, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import EAModal from './EAModal';
+import { connect } from 'react-redux';
+
 
 export default class EAButton extends Component {
     constructor() {
         super();
         this.state = {
             show: false,
-            name: '',
-            email: ''
         };
 
         this.handleShow = this.handleShow.bind(this);
     }
 
     handleShow(){
-        this.setState({ show: true });
+        this.setState({ show: !this.state.show });
     }
 
     render() {
@@ -26,7 +26,7 @@ export default class EAButton extends Component {
                     Get Early Access
                 </button>
 
-                <EAModal show={ this.state.show }/>
+                <EAModal show={ this.state.show } handleShow={ this.handleShow }/>
             </div>
         )
     }
