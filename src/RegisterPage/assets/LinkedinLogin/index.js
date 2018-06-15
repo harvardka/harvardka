@@ -45,7 +45,7 @@ class LinkedinLogin extends React.Component{
         window.IN.User.authorize( () => {
 
             window.IN.API.Profile("me")
-                .fields(["id", "firstName", "lastName", "pictureUrl", "publicProfileUrl", "headline"])
+                .fields(["id", "firstName", "lastName", "pictureUrl", "publicProfileUrl", "headline", "emailAddress"])
                 .result((result) => {
                     console.log(result);
                     // alert("Successfull login from linkedin : "+ result.values[0].headline + result.values[0].firstName + " " + result.values[0].lastName);

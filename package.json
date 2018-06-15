@@ -7,14 +7,18 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build": "react-scripts build",
+    "surge": "cd src/ && mv index.html ../public/ && mv index.jsx index.js && yarn run build && cd .. && surge build/ thehandshake.surge.sh && rm -rf build/ && mv public/index.html src/index.html && mv src/index.js src/index.jsx"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.2.2",
     "apollo-client": "^2.3.2",
     "apollo-link-context": "^1.0.8",
     "apollo-link-http": "^1.5.4",
+    "axios": "^0.18.0",
     "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
     "grid-styled": "^4.1.0",
@@ -24,6 +28,7 @@
     "react-apollo": "^2.1.4",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.0.0",
+    "react-motion": "^0.5.2",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
     "rebass": "^2.0.0-2",
@@ -32,7 +37,8 @@
     "redux-thunk": "^2.2.0",
     "reflexbox": "^3.0.1",
     "reselect": "^3.0.1",
-    "style-loader": "^0.21.0"
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",

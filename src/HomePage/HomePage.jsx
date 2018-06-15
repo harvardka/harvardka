@@ -1,45 +1,54 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import {Box, Flex, Column, Row} from 'rebass';
+import { Image } from 'react-bootstrap';
+import { Motion, spring } from 'react-motion';
 
-import { userActions } from '../_actions';
+import EAButton from './assets/EAButton';
+import './assets/styles.css';
+
 
 class HomePage extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(userActions.getAll());
-    }
-
-    handleDeleteUser(id) {
-        return (e) => this.props.dispatch(userActions.delete(id));
-    }
-
     render() {
-        const { user, users } = this.props;
         return (
-            <div className="col-md-6 col-md-offset-3">
-                <h1>Hi {user.firstName}!</h1>
-                <p>You're logged in with React!!</p>
-                <h3>All registered users:</h3>
-                {users.loading && <em>Loading users...</em>}
-                {users.error && <span className="text-danger">ERROR: {users.error}</span>}
-                {users.items &&
-                    <ul>
-                        {users.items.map((user, index) =>
-                            <li key={user.id}>
-                                {user.firstName + ' ' + user.lastName}
-                                {
-                                    user.deleting ? <em> - Deleting...</em>
-                                    : user.deleteError ? <span className="text-danger"> - ERROR: {user.deleteError}</span>
-                                    : <span> - <a onClick={this.handleDeleteUser(user.id)}>Delete</a></span>
+          <div>
+              <div className='h5'>Handshake is coming to you.</div>
+              <div className='h1'>The simplest way to <br/> get connected, made for you</div>
+              <br />
+                <Row>
+                    <Column width={1/3}>
+                        <div className='button'>
+                          <EAButton id='button' />
+                        </div>
+                    </Column>
+                    <Column width={2/3}>
+                        <div className='img'>
+                            <Motion
+                                defaultStyle={{ x: 4000, opacity: 0}}
+                                style= {{ x: spring(0), opacity: spring(1)}}
+                            >
+                                { style => (
+                                    <Image
+                                        responsive
+                                        src={require('./assets/temp.jpg')}
+                                        width="100%"
+                                        style={{
+                                            transform: `translate(${style.x}px)`,
+                                            opacity: style.opacity
+                                        }}
+                                    />
+                                )
+
                                 }
-                            </li>
-                        )}
-                    </ul>
-                }
-                <p>
-                    <Link to="/login">Logout</Link>
-                </p>
+
+                            </Motion>
+                        </div>
+                    </Column>
+
+                </Row>
             </div>
+
         );
     }
 }

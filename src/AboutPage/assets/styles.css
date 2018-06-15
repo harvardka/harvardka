@@ -1,0 +1,17 @@
+form {
+    position: relative;
+    padding-top: 25px;
+    text-align: center;
+  }
+
+div.h5 {
+  font-size: 1.2em;
+  font-weight: 545;
+  margin-top: 5.5em;
+}
+
+div.h1 {
+  font-size: 3.2em;
+  font-weight: 550;
+  margin-top: 0.3em;
+}

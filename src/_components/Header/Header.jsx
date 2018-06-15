@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Image, Navbar, Nav , NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 
 import { store } from '../../_helpers/store';
+import './styles.css'
 
 // Assets
 import UserNav  from './assets/UserNav';
@@ -49,11 +50,21 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <Navbar inverse collapseOnSelect>
-                    <Navbar.Header className='red'>
+                <Navbar fixedTop bsStyle='default' collapseOnSelect>
+                    <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="/" className="nav-center">handshake</a>
+                            {this.state.isLoggedIn
+                            ? <a href="/" className="nav-center">handshake</a>
+                            : <a href="/">handshake</a>
+                            }
                         </Navbar.Brand>
+                        <Nav>
+                          <NavItem eventKey={1} href="/team">
+                            {this.state.isLoggedIn
+                                ? <span className="nav-center">team</span>
+                                : <span>team</span> }
+                          </NavItem>
+                        </Nav>
                         <Navbar.Toggle />
                     </Navbar.Header>
                     <Navbar.Collapse>
@@ -61,7 +72,7 @@ class Header extends React.Component {
                         {/* Checks to see if user is logged in. Shows my Profile
                             if true, else shows login/signup prompt*/}
 
-                            < UserNav firstName = { this.state.firstName } pictureUrl = {this.state.pictureUrl} isLoggedIn = { this.state.isLoggedIn } />
+                            {/*< UserNav firstName = { this.state.firstName } pictureUrl = {this.state.pictureUrl} isLoggedIn = { this.state.isLoggedIn } />*/}
 
                         </Nav>
                     </Navbar.Collapse>

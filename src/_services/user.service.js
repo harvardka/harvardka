@@ -19,7 +19,7 @@ function login(username, password) {
 
     return fetch('/users/authenticate', requestOptions)
         .then(response => {
-            if (!response.ok) { 
+            if (!response.ok) {
                 return Promise.reject(response.statusText);
             }
 
@@ -56,7 +56,7 @@ function getById(id) {
         headers: authHeader()
     };
 
-    return fetch('/users/' + _id, requestOptions).then(handleResponse);
+    return fetch('/users/' + id, requestOptions).then(handleResponse);
 }
 
 function register(user) {
@@ -90,7 +90,7 @@ function _delete(id) {
 }
 
 function handleResponse(response) {
-    if (!response.ok) { 
+    if (!response.ok) {
         return Promise.reject(response.statusText);
     }
 

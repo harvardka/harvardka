@@ -6,6 +6,7 @@ import { Header } from '../_components/Header';
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
 import { PrivateRoute } from '../_components';
+import { Banner } from 'rebass';
 
 // Pages
 import { HomePage } from '../HomePage';
@@ -14,6 +15,10 @@ import { RegisterPage } from '../RegisterPage';
 import { TestPage } from '../TestPage';
 import { ProfilePage } from '../ProfilePage'
 import { MatchPage } from '../MatchPage';
+import { AdminPage } from '../AdminPage';
+import { AboutPage } from '../AboutPage';
+import { TeamPage } from '../TeamPage';
+
 import '../_constants/styles.css'
 
 // Apollo
@@ -37,6 +42,7 @@ class App extends React.Component {
         return (
             <div>
                 < Header / >
+                < Banner bg='white' minHeight='25%' />
                 <div>
                     <div>
                         <div>
@@ -49,11 +55,14 @@ class App extends React.Component {
                                 <Router history={history}>
                                     <div>
                                         <div className="col-sm-10 col-sm-offset-1">
-                                          <PrivateRoute exact path="/" component={HomePage} />
+                                          <Route exact path="/" component={HomePage} />
                                           <Route path="/login" component={LoginPage} />
                                           <Route path="/register" component={RegisterPage} />
                                           <Route path="/test" component={TestPage} />
-                                          <PrivateRoute exact  path="/match" component={MatchPage} />
+                                          <Route path="/about" component={AboutPage} />
+                                          <Route path="/team" component={TeamPage} />
+                                          <PrivateRoute exact path="/admin" component={AdminPage} />
+                                          <PrivateRoute exact path="/match" component={MatchPage} />
                                           <PrivateRoute exact path="/profile" component={ProfilePage} />
                                         </div>
                                     </div>
