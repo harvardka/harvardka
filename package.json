@@ -7,7 +7,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build": "react-scripts build",
+    "surge": "cd src/ && yarn run build && cd .. && surge build/ thehandshake.surge"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.2.2",
