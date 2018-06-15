@@ -13,7 +13,7 @@ class HomePage extends React.Component {
     render() {
         return (
           <div>
-              <div className='h5'>Friends & Family is coming to Boston</div>
+              <div className='h5'>Handshake is coming to Boston</div>
               <div className='h1'>The simplest way to <br/> get connected, made for you</div>
               <br />
                 <Row>

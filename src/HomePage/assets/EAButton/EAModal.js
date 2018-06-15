@@ -86,8 +86,7 @@ class EAModal extends React.Component {
 
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={ this.props.handleShow }>Close</Button>
-                        <Button form="signup" type="submit">Signup</Button>
+                        <Button form="signup" type="submit">Sign me up!</Button>
                     </Modal.Footer>
                 </Modal>
             </div>
