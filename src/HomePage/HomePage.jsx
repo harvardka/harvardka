@@ -7,46 +7,59 @@ import { Motion, spring } from 'react-motion';
 
 import EAButton from './assets/EAButton';
 import './assets/styles.css';
+import {TeamPage} from '../TeamPage/';
+import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor'
 
 
 class HomePage extends React.Component {
+    constructor(props){
+        super(props);
+        configureAnchors({offset: -80})
+    }
     render() {
         return (
-          <div>
-              <div className='h5'>Handshake is coming to you.</div>
-              <div className='h1'>The simplest way to <br/> get connected, made for you</div>
-              <br />
-                <Row>
-                    <Column width={1/3}>
-                        <div className='button'>
-                          <EAButton id='button' />
-                        </div>
-                    </Column>
-                    <Column width={2/3}>
-                        <div className='img'>
-                            <Motion
-                                defaultStyle={{ x: 4000, opacity: 0}}
-                                style= {{ x: spring(0), opacity: spring(1)}}
-                            >
-                                { style => (
-                                    <Image
-                                        responsive
-                                        src={require('./assets/temp.jpg')}
-                                        width="100%"
-                                        style={{
-                                            transform: `translate(${style.x}px)`,
-                                            opacity: style.opacity
-                                        }}
-                                    />
-                                )
+            <div>
+                    <div>
+                        <div className='h5'>Handshake is coming to you.</div>
+                        <div className='h1'>The simplest way to <br/> get connected, made for you</div>
+                        <br />
+                        <Row>
+                            <Column width={1/3}>
+                                <div className='button'>
+                                  <EAButton id='button' />
+                                </div>
+                            </Column>
+                            <Column width={2/3}>
+                                <div className='img'>
+                                    <Motion
+                                        defaultStyle={{ x: 4000, opacity: 0}}
+                                        style= {{ x: spring(0), opacity: spring(1)}}
+                                    >
+                                        { style => (
+                                            <Image
+                                                responsive
+                                                src={require('./assets/temp.jpg')}
+                                                width="100%"
+                                                style={{
+                                                    transform: `translate(${style.x}px)`,
+                                                    opacity: style.opacity
+                                                }}
+                                            />
+                                        )
 
-                                }
+                                        }
 
-                            </Motion>
-                        </div>
-                    </Column>
+                                    </Motion>
+                                </div>
+                            </Column>
 
-                </Row>
+                        </Row>
+                    </div>
+                <ScrollableAnchor id={'team'}>
+                    <div>
+                        < TeamPage />
+                    </div>
+                </ScrollableAnchor>
             </div>
 
         );

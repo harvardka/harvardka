@@ -35,6 +35,7 @@ class TeamPage extends React.Component {
 
         return (
             <div>
+                {/* REMOVED B/C THIS IS NOT DIRECTLY TEAM RELATED.
                 <div id="main">
                     <div className="title">
                         <h1>We are your <br/><strong><em>Friends & Family</em></strong>.</h1>
@@ -44,8 +45,8 @@ class TeamPage extends React.Component {
                         <h6>We connect you early because we appreciate and promote the individuals who deserve help.</h6>
                         <h6>From day zero, we focus on your strengths and find the right people to back you.</h6>
                     </div>
-                </div>
-
+                </div>*/}
+                <div className='h2'>Meet the team.</div>
                 <div className="images">
                   <div>
                     <Card src={Zia} name="Zia Haider Rahman" role="Vision"/>

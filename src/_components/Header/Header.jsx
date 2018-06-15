@@ -59,7 +59,7 @@ class Header extends React.Component {
                             }
                         </Navbar.Brand>
                         <Nav>
-                          <NavItem eventKey={1} href="/team">
+                          <NavItem eventKey={1} href="#team">
                             {this.state.isLoggedIn
                                 ? <span className="nav-center">team</span>
                                 : <span>team</span> }
