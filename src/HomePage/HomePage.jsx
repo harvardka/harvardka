@@ -7,48 +7,52 @@ import { Motion, spring } from 'react-motion';
 
 import EAButton from './assets/EAButton';
 import './assets/styles.css';
+import FadeContainer from './assets/FadeContainer';
 
 
 class HomePage extends React.Component {
     render() {
         return (
-          <div>
-              <div className='h5'>Handshake is coming to you.</div>
-              <div className='h1'>The simplest way to <br/> get connected, made for you</div>
-              <br />
-                <Row>
-                    <Column width={1/3}>
-                        <div className='button'>
-                          <EAButton id='button' />
-                        </div>
-                    </Column>
-                    <Column width={2/3}>
-                        <div className='img'>
-                            <Motion
-                                defaultStyle={{ x: 4000, opacity: 0}}
-                                style= {{ x: spring(0), opacity: spring(1)}}
-                            >
-                                { style => (
-                                    <Image
-                                        responsive
-                                        src={require('./assets/temp.jpg')}
-                                        width="100%"
-                                        style={{
-                                            transform: `translate(${style.x}px)`,
-                                            opacity: style.opacity
-                                        }}
-                                    />
-                                )
+            <div>
+              < FadeContainer />
 
-                                }
+              <div>
+                  <div className='h5'>Friends & Family is coming to Boston</div>
+                  <div className='h1'>The simplest way to <br/> get connected, made for you</div>
+                  <br />
+                    <Row>
+                        <Column width={1/3}>
+                            <div className='button'>
+                              <EAButton id='button' />
+                            </div>
+                        </Column>
+                        <Column width={2/3}>
+                            <div className='img'>
+                                <Motion
+                                    defaultStyle={{ x: 4000, opacity: 0}}
+                                    style= {{ x: spring(0), opacity: spring(1)}}
+                                >
+                                    { style => (
+                                        <Image
+                                            responsive
+                                            src={require('./assets/temp.jpg')}
+                                            width="100%"
+                                            style={{
+                                                transform: `translate(${style.x}px)`,
+                                                opacity: style.opacity
+                                            }}
+                                        />
+                                    )
 
-                            </Motion>
-                        </div>
-                    </Column>
+                                    }
 
-                </Row>
+                                </Motion>
+                            </div>
+                        </Column>
+
+                    </Row>
+                </div>
             </div>
-
         );
     }
 }
