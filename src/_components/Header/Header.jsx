@@ -72,7 +72,7 @@ class Header extends React.Component {
                         {/* Checks to see if user is logged in. Shows my Profile
                             if true, else shows login/signup prompt*/}
 
-                            < UserNav firstName = { this.state.firstName } pictureUrl = {this.state.pictureUrl} isLoggedIn = { this.state.isLoggedIn } />
+                            {/*< UserNav firstName = { this.state.firstName } pictureUrl = {this.state.pictureUrl} isLoggedIn = { this.state.isLoggedIn } />*/}
 
                         </Nav>
                     </Navbar.Collapse>
