@@ -39,7 +39,7 @@ class TextAnimation extends React.Component{
 
   render(){
     return(
-      <Flex width="100%" justifyContent="center">
+      <Flex width="100%" justifyContent="center" style={{color: 'white'}}>
         <Box width={1/4} style={{textAlign: 'right'}}><h1>{this.state.word1},</h1></Box>
         <Box w="120px" style={{textAlign: 'center'}}><h1>meet</h1></Box>
         <Box width={1/4}><h1>{this.state.word2}</h1></Box>
