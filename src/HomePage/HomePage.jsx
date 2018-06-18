@@ -9,6 +9,7 @@ import EAButton from './assets/EAButton';
 import './assets/styles.css';
 import {TeamPage} from '../TeamPage/';
 import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor'
+import FadeContainer from './assets/FadeContainer';
 
 
 class HomePage extends React.Component {
@@ -19,6 +20,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
+                < FadeContainer />
                 <ScrollableAnchor id={'home'}>
                     <div>
                         <div className='h5'>Handshake is coming to you.</div>
@@ -64,6 +66,9 @@ class HomePage extends React.Component {
                 </ScrollableAnchor>
             </div>
 
+                    </Row>
+                </div>
+            </div>
         );
     }
 }
