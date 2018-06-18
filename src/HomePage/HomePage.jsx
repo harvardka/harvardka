@@ -24,7 +24,7 @@ class HomePage extends React.Component {
                 <ScrollableAnchor id={'home'}>
                     <div>
                         <div className='h5'>Handshake is coming to you.</div>
-                        <div className='h1'>The simplest way to <br/> get connected, made for you</div>
+                        <div className='h1'>We open up the relationships you need.</div>
                         <br />
                         <Row>
                             <Column width={1/3}>
