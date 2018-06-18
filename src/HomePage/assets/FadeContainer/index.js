@@ -24,7 +24,7 @@ class FadeContainer extends React.Component{
   render(){
     console.log('hello')
     return(
-      <Fade timeout={100000} in={this.state.open} unmountOnExit={true}>
+      <Fade timeout={300} in={this.state.open} unmountOnExit={true}>
         <Flex alignItems='center' style={{zIndex: '1050', position: 'fixed', width: '100%', height: '100vh', top: '0', right: '0', backgroundColor: '#c4c4c4'}}>
           < TextAnimation fadeOut={this.fadeOut}/>
         </Flex>
