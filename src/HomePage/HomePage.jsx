@@ -66,9 +66,6 @@ class HomePage extends React.Component {
                 </ScrollableAnchor>
             </div>
 
-                    </Row>
-                </div>
-            </div>
         );
     }
 }
