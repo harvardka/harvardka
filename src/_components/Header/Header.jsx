@@ -54,8 +54,8 @@ class Header extends React.Component {
                     <Navbar.Header>
                         <Navbar.Brand>
                             {this.state.isLoggedIn
-                            ? <a href="/" className="nav-center">handshake</a>
-                            : <a href="/">handshake</a>
+                            ? <a href="#home" className="nav-center">handshake</a>
+                            : <a href="#home">handshake</a>
                             }
                         </Navbar.Brand>
                         <Nav>

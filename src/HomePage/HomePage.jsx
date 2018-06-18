@@ -19,6 +19,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
+                <ScrollableAnchor id={'home'}>
                     <div>
                         <div className='h5'>Handshake is coming to you.</div>
                         <div className='h1'>The simplest way to <br/> get connected, made for you</div>
@@ -55,6 +56,7 @@ class HomePage extends React.Component {
 
                         </Row>
                     </div>
+                </ScrollableAnchor>
                 <ScrollableAnchor id={'team'}>
                     <div>
                         < TeamPage />
