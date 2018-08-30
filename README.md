@@ -1,2 +1,2 @@
-# harvardka
-Harvard KA Website
+# Harvard Korean Association
+HKA's Website
