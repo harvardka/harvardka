@@ -57,10 +57,10 @@ class EAModal extends React.Component {
 
                 <Modal show={this.props.show} onHide={this.props.handleShow}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Early Access</Modal.Title>
+                        <Modal.Title>SibFams</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <h2>Be among the first to get Handshake.</h2>
+                        <h2>Register now to be in a SibFam</h2>
                         <div>
                             <Form inline onSubmit={ this.handleSubmit } id="signup" >
                                 <FormGroup  controlId="formInlineName">
@@ -96,21 +96,15 @@ class EAModal extends React.Component {
                                             id="input-dropdown-addon"
                                             title={ this.state.orgType }
                                         >
-                                            <MenuItem onClick = { this.handleOrgClick } name="orgType" title="Startup" >Startup</MenuItem>
-                                            <MenuItem onClick = { this.handleOrgClick } name="orgType" title="VC">VC</MenuItem>
+                                            <MenuItem onClick = { this.handleOrgClick } name="orgType" title="Startup" >Freshman</MenuItem>
+                                            <MenuItem onClick = { this.handleOrgClick } name="orgType" title="VC">Sophomore</MenuItem>
                                             <MenuItem onClick = { this.handleOrgClick } name="orgType" title="Other">Other</MenuItem>
                                         </DropdownButton>
 
                                         <div>
-                                        {   this.state.orgType == "Organization (optional)"
+                                        {   this.state.orgType == "Year (optional)"
                                             ? <div></div>
                                             : <div>
-                                                <FormControl
-                                                onChange = {this.handleChange}
-                                                name="orgName"
-                                                type="text"
-                                                placeholder= { this.state.orgType == "Startup" ? "Handshake" : "First Round Ventures"}
-                                                />
                                             </div>}
                                         </div>
                                     </InputGroup>

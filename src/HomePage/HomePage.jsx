@@ -7,9 +7,17 @@ import { Motion, spring } from 'react-motion';
 
 import EAButton from './assets/EAButton';
 import './assets/styles.css';
-import {TeamPage} from '../TeamPage/';
+import {AboutPage} from '../AboutPage';
+import {EventsPage} from '../EventsPage';
+import {TeamPage} from '../TeamPage';
+import {ContactPage} from '../ContactPage';
+
+import {DramaPage} from '../DramaPage';
+import {MusicPage} from '../MusicPage';
+import {EducationPage} from '../EducationPage';
+
 import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor'
-import FadeContainer from './assets/FadeContainer';
+// import FadeContainer from './assets/FadeContainer';
 
 
 class HomePage extends React.Component {
@@ -20,19 +28,24 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-                < FadeContainer />
+                {/* < FadeContainer /> */}
                 <ScrollableAnchor id={'home'}>
                     <div>
-                        <div className='h5'>Handshake is coming to you.</div>
-                        <div className='h1'>The simplest way to <br/> get connected, made for you</div>
-                        <br />
+
                         <Row>
-                            <Column width={1/3}>
+                            <Column width={3/5}>
+                                <div className='copy'><strong>Korean culture.</strong> <br />
+                                <strong>Now for everyone. You too.</strong></div>
+                            
+                                <div className='additional'>HKA is a welcoming family for all races, genders, <br />and sexual orientations.</div>
+                                {/* <br /> */}
+
                                 <div className='button'>
                                   <EAButton id='button' />
                                 </div>
                             </Column>
-                            <Column width={2/3}>
+                            
+                            <Column width={2/5}>
                                 <div className='img'>
                                     <Motion
                                         defaultStyle={{ x: 4000, opacity: 0}}
@@ -41,7 +54,7 @@ class HomePage extends React.Component {
                                         { style => (
                                             <Image
                                                 responsive
-                                                src={require('./assets/temp.jpg')}
+                                                src={require('./assets/images/gangnam_style.png')}
                                                 width="100%"
                                                 style={{
                                                     transform: `translate(${style.x}px)`,
@@ -59,13 +72,43 @@ class HomePage extends React.Component {
                         </Row>
                     </div>
                 </ScrollableAnchor>
-                <ScrollableAnchor id={'team'}>
+                {/* <ScrollableAnchor id={'about'}>
+                    <div>
+                        < AboutPage />
+                    </div>
+                </ScrollableAnchor> */}
+                <ScrollableAnchor id={'events'}>
+                    <div>
+                        < EventsPage />
+                    </div>
+                </ScrollableAnchor>
+                {/* <ScrollableAnchor id={'team'}>
                     <div>
                         < TeamPage />
                     </div>
+                </ScrollableAnchor> */}
+                {/* <ScrollableAnchor id={'contact'}>
+                    <div>
+                        < ContactPage />
+                    </div>
+                </ScrollableAnchor> */}
+                <ScrollableAnchor>
+                    <div>
+                        <DramaPage />
+                    </div>
+                </ScrollableAnchor>
+                <ScrollableAnchor>
+                    <div>
+                        <MusicPage />
+                    </div>
+                </ScrollableAnchor>
+
+                <ScrollableAnchor>
+                    <div>
+                        <EducationPage />
+                    </div>
                 </ScrollableAnchor>
             </div>
-
         );
     }
 }

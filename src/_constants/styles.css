@@ -2,7 +2,6 @@
 
 html {
   font-size: 100%;
-
 }
 
 body {
@@ -10,19 +9,14 @@ body {
   padding: 0;
   font-size: 0.85rem;
   line-height: 1.5;
-  color: #59565F;
+  color: #000;
   font-family: 'Montserrat', sans-serif;
 }
 
-.nav-center {
-  line-height: 35px;
-  vertical-align: middle;
-}
-
-.btn{
-  color: #9FD356;
-}
-
-button:disabled {
-  opacity: 0.5;
+.header {
+  margin-top: 5vh;
+  font-size: 45px;
+  font-weight: 1000;
+  letter-spacing: -1px;
+  line-height: 58px;
 }

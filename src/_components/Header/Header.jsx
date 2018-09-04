@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Image, Navbar, Nav , NavItem, NavDropdown, MenuItem} from 'react-bootstrap';
 
@@ -54,28 +52,54 @@ class Header extends React.Component {
                     <Navbar.Header>
                         <Navbar.Brand>
                             {this.state.isLoggedIn
-                            ? <a href="#home" className="nav-center">handshake</a>
-                            : <a href="#home">handshake</a>
+                            ? <a href="/" className="nav-center">
+                                <Image
+                                        responsive
+                                        src={require('./log.jpg')}
+                                />
+                                </a>
+                            : <a href="/">
+                                <Image
+                                    responsive
+                                    src={require('./log.jpg')}
+                                />
+                                </a>
                             }
                         </Navbar.Brand>
                         <Nav>
-                          <NavItem eventKey={1} href="#team">
+                          <NavItem eventKey={1} href="/about">
+                            {this.state.isLoggedIn
+                                ? <span className="nav-center">about</span>
+                                : <span>about</span> }
+                          </NavItem>
+                        </Nav>
+                        <Nav>
+                          <NavItem eventKey={1} href="#events">
+                            {this.state.isLoggedIn
+                                ? <span className="nav-center">events</span>
+                                : <span>about</span> }
+                          </NavItem>
+                        </Nav>
+                        <Nav>
+                          <NavItem eventKey={2} href='/team'>
                             {this.state.isLoggedIn
                                 ? <span className="nav-center">team</span>
                                 : <span>team</span> }
                           </NavItem>
                         </Nav>
+                        <Nav>
+                          <NavItem eventKey={2} href='/contact'>
+                            {this.state.isLoggedIn
+                                ? <span className="nav-center">contact</span>
+                                : <span>contact</span> }
+                          </NavItem>
+                        </Nav>
                         <Navbar.Toggle />
                     </Navbar.Header>
-                    <Navbar.Collapse>
+                    {/* <Navbar.Collapse>
                         <Nav pullRight>
-                        {/* Checks to see if user is logged in. Shows my Profile
-                            if true, else shows login/signup prompt*/}
-
-                            {/*< UserNav firstName = { this.state.firstName } pictureUrl = {this.state.pictureUrl} isLoggedIn = { this.state.isLoggedIn } />*/}
-
                         </Nav>
-                    </Navbar.Collapse>
+                    </Navbar.Collapse> */}
                 </Navbar>
             </div>
         );
