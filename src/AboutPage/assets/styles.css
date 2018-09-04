@@ -1,17 +1,48 @@
-form {
-    position: relative;
-    padding-top: 25px;
-    text-align: center;
-  }
-
-div.h5 {
-  font-size: 1.2em;
-  font-weight: 545;
-  margin-top: 5.5em;
+.about_main {
+  text-align: center;
+  /* height: 50vh; */
 }
 
-div.h1 {
-  font-size: 3.2em;
-  font-weight: 550;
-  margin-top: 0.3em;
+.about_space {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 50vh;
+}
+
+.flag {
+  background-image: url('./images/korean_flag.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-top: 5px solid #000;
+}
+
+.about_header {
+  /* font-size: 45px; */
+  /* font-weight: 1000; */
+  /* letter-spacing: -1px;
+  line-height: 58px; */
+}
+
+div.H3 {
+  color: #000;
+  font-size: 1.8em;
+}
+
+div.divider {
+  margin-bottom: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 1px;
+  Background-color: #000;
+}
+
+div.H4 {
+  color: #000;
+  font-size: 1.5em;
+}
+
+.header_footer {
+  padding: 25px;
 }

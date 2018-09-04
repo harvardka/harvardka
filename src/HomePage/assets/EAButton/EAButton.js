@@ -23,7 +23,7 @@ export default class EAButton extends Component {
         return (
             <div className="button">
                 <button onClick={ this.handleShow } className="box">
-                    Get Early Access
+                    Sign up for SibFam
                 </button>
 
                 <EAModal show={ this.state.show } handleShow={ this.handleShow }/>
