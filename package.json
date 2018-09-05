@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "react-scripts build",
+    "npm install preact-cli && preact build",
     "surge": "cd src/ && mv index.html ../public/ && mv index.jsx index.js && yarn run build && cd .. && surge build/ thehandshake.surge.sh && rm -rf build/ && mv public/index.html src/index.html && mv src/index.js src/index.jsx"
   },
   "dependencies": {
