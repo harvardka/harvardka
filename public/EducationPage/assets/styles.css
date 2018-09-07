@@ -1,0 +1,22 @@
+.education_header {
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.education_subheader {
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+img.education_img {
+    /* border: 1px solid #000000; */
+    border-radius: 5px;
+}
+
+.img_text {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 5px;
+}
