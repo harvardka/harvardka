@@ -77,7 +77,7 @@ class Header extends React.Component {
                           <NavItem eventKey={1} href="#events">
                             {this.state.isLoggedIn
                                 ? <span className="nav-center">events</span>
-                                : <span>about</span> }
+                                : <span>events</span> }
                           </NavItem>
                         </Nav>
                         <Nav>
