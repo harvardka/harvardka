@@ -9,7 +9,9 @@
     border-radius: 5px;
 }
 
-/* .events_description {
-    margin-top: 2vh;
-    font-size: 1.2em;
-} */
+.events_description {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 5px;
+}

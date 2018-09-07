@@ -12,10 +12,14 @@
 }
 
 .flag {
-  background-image: url('./images/korean_flag.jpg');
+  background-image: url('./images/korean_flag.png');
   background-repeat: no-repeat;
   background-size: contain;
   border-top: 5px solid #000;
+}
+
+.br {
+  margin-top: 10vh;
 }
 
 .about_header {

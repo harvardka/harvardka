@@ -75,9 +75,7 @@ class TeamPage extends React.Component {
                     <Card src={Gayoung} name="Gayoung Choi" role="Finance Chair"/>
                   </div>
                 </div>
-
-                <div className="header_footer" />
-                <div className="footer">Harvard Korean American Association 2018 ©</div>
+                {/* <div className="footer">Harvard Korean American Association 2018 ©</div> */}
             </div>
         )
     }

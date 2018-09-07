@@ -16,10 +16,18 @@ class DramaPage extends React.Component {
                 <div className='drama_header'>featured k-drama streaming websites</div>
                 <div className='drama_subheader'>browse the newest shows all for free</div>
                 <Row>
-                    <Column width={1/4}><a href="https://www.dramafever.com/"><img className='drama_img' src={Dramafever} /></a>DRAMAFEVER</Column>
-                    <Column width={1/4}><a href="https://dasiboda.pro/"><img className='drama_img' src={Dasiboda} /></a>DASIBODA</Column>
-                    <Column width={1/4}><a href="https://www.asiancrush.com/browse/drama/korean/"><img className='drama_img' src={Asiancrush} /></a>ASIAN CRUSH</Column>
-                    <Column width={1/4}><a href="https://kissasian.es/Country/South-Korea"><img className='drama_img' src={Kissasian} /></a>KISSASIAN</Column>
+                    <Column width={1/4}><a href="https://www.dramafever.com/"><img className='drama_img' src={Dramafever} /></a>
+                        <div className='drama_text'>DRAMAFEVER</div>
+                    </Column>
+                    <Column width={1/4}><a href="https://dasiboda.pro/"><img className='drama_img' src={Dasiboda} /></a>
+                        <div className='drama_text'>DASIBODA</div>
+                    </Column>
+                    <Column width={1/4}><a href="https://www.asiancrush.com/browse/drama/korean/"><img className='drama_img' src={Asiancrush} /></a>
+                        <div className='drama_text'>ASIANCRUSH</div>
+                    </Column>
+                    <Column width={1/4}><a href="https://kissasian.es/Country/South-Korea"><img className='drama_img' src={Kissasian} /></a>
+                        <div className='drama_text'>KISSASIAN</div>
+                    </Column>
                 </Row>
             </div>
         )

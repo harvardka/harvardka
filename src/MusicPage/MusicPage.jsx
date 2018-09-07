@@ -19,16 +19,28 @@ class MusicPage extends React.Component {
             <div>
                 <div className='music_header'>korean music in the spotlight</div>
                 <Row>
-                    <Column width={1/3}><a href="https://www.youtube.com/channel/UCLkAepWjdylmXSltofFvsYQ"><img className='music_img' src={Bts} /></a>BTS</Column>
-                    <Column width={1/3}><a href="https://www.youtube.com/channel/UCOmHUn--16B90oW2L6FRR3A"><img className='music_img' src={Blackpink} /></a>BLACKPINK</Column>
-                    <Column width={1/3}><a href="https://www.youtube.com/channel/UCzw-C7fNfs018R1FzIKnlaA"><img className='music_img' src={Bigbang} /></a>BIG BANG</Column>
+                    <Column width={1/3}><a href="https://www.youtube.com/channel/UCLkAepWjdylmXSltofFvsYQ"><img className='music_img' src={Bts} /></a>
+                        <div className='music_text'>BTS · 방탄소년단</div>
+                    </Column>
+                    <Column width={1/3}><a href="https://www.youtube.com/channel/UCOmHUn--16B90oW2L6FRR3A"><img className='music_img' src={Blackpink} /></a>
+                        <div className='music_text'>BLACKPINK · 블랙핑크</div>
+                    </Column>
+                    <Column width={1/3}><a href="https://www.youtube.com/channel/UCzw-C7fNfs018R1FzIKnlaA"><img className='music_img' src={Bigbang} /></a>
+                        <div className='music_text'>BIG BANG · 빅뱅</div>
+                    </Column>
                     {/* <Column width={1/4}><a href="https://www.youtube.com/watch?v=JQGRg8XBnB4"><img src={Momoland} /></a>MOMOLAND</Column> */}
                 </Row>
                 <Row>
-                    <Column width={1/3}><a href="https://www.youtube.com/watch?v=TcytstV1_XE"><img className='music_img' src={Crush} /></a>CRUSH</Column>
-                    <Column width={1/3}><a href="https://www.youtube.com/watch?v=VlxTWhoPHhY"><img className='music_img' src={Kimbumsoo} /></a>KIM BUM SOO</Column>
+                    <Column width={1/3}><a href="https://www.youtube.com/watch?v=TcytstV1_XE"><img className='music_img' src={Crush} /></a>
+                        <div className='music_text'>CRUSH · 크러쉬</div>
+                    </Column>
+                    <Column width={1/3}><a href="https://www.youtube.com/watch?v=VlxTWhoPHhY"><img className='music_img' src={Kimbumsoo} /></a>
+                        <div className='music_text'>KIM BUM SOO · 김범수</div>
+                    </Column>
                     {/* <Column width={1/4}><a href="https://www.youtube.com/watch?v=ZHoLaLlL5lA"><img src={Zico} /></a>ZICO</Column> */}
-                    <Column width={1/3}><a href="https://www.youtube.com/watch?v=EiVmQZwJhsA"><img className='music_img' src={Iu} /></a>IU</Column>
+                    <Column width={1/3}><a href="https://www.youtube.com/watch?v=EiVmQZwJhsA"><img className='music_img' src={Iu} /></a>
+                        <div className='music_text'>IU · 아이유</div>
+                    </Column>
                 </Row>
             </div>
         )
