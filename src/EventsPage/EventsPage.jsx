@@ -26,48 +26,44 @@ class EventsPage extends React.Component {
                     <Column width={1/2}>
                         <div>
                             <img src={StudentFair} alt="Avatar" className='events_img' />
-                            <div className='events_description'>Sep. 7th 3-5pm: ​Student Involvement Fair</div>
+                            <div className='events_description'>September 7, Friday, 3pm to 5pm · Student Involvement Fair</div>
                         </div>
                     </Column>
-
-                    <Column width={1/2}>
+                    {/* <Column width={1/2}>
                         <div>
                             <img src={Party} alt="Avatar" className='events_img' />
                             <div className='events_description'>Sep. 8th: ​Potentially co-host party with AAA</div>
                         </div>
-                    </Column>
-                </Row>
-
-                <Row>
+                    </Column> */}
                     <Column width={1/2}>
                         <div>
                             <img src={MeetandGreet} alt="Avatar" className='events_img' />
-                            <div className='events_description'>Sep. 9th: ​Intro get to know KA Board event</div>
-                        </div>
-                    </Column>
-                
-                    <Column width={1/2}>
-                        <div>
-                            <img src={Announcement} alt="Avatar" className='events_img' />
-                            <div className='events_description'>Sep. 14th:​ Sibfam Assignments</div>
+                            <div className='events_description'>September 9, Sunday, 7pm to 9pm · Meet and Greet</div>
                         </div>
                     </Column>
                 </Row>
-
                 <Row>
                     <Column width={1/2}>
                         <div>
-                            <img src={SibFam} alt="Avatar" className='events_img' />
-                            <div className='events_description'>Sep. 21st/22nd: ​Sibfam kickoff</div>
+                            <img src={Announcement} alt="Avatar" className='events_img' />
+                            <div className='events_description'>September 14, Friday · Sibfam Assignments</div>
                         </div>
                     </Column>
-                
+                    <Column width={1/2}>
+                        <div>
+                            <img src={SibFam} alt="Avatar" className='events_img' />
+                            <div className='events_description'>September 21, Friday · Sibfam Kickoff</div>
+                        </div>
+                    </Column>
+                </Row>
+                <Row>
                     <Column width={1/2}>
                         <div>
                             <img src={Elections} alt="Avatar" className='events_img' />
-                            <div className='events_description'>Sep. 23rd: ​Frosh rep elections</div>
+                            <div className='events_description'>September 23, Sunday · ​Frosh rep elections</div>
                         </div>
                     </Column>
+                    <Column width={1/2}></Column>
                 </Row>
             </div>
         )
