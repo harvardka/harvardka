@@ -1,5 +1,8 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import {
+    HashRouter as Router,
+    Route,
+    } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Header } from '../_components/Header';
 
@@ -66,7 +69,7 @@ class App extends React.Component {
                                           <Route path="/team" component={TeamPage} />
                                           
                                           <Route path='/events' component={EventsPage} />
-                                          <Route path='/contacts' component={ContactPage} />
+                                          <Route path='/contact' component={ContactPage} />
                                           
                                           <PrivateRoute exact path="/admin" component={AdminPage} />
                                           <PrivateRoute exact path="/match" component={MatchPage} />
