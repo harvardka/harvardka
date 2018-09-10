@@ -66,7 +66,7 @@ class App extends React.Component {
                                           <Route path="/team" component={TeamPage} />
                                           
                                           <Route path='/events' component={EventsPage} />
-                                          <Route path='/contact' component={ContactPage} />
+                                          <Route path='/contacts' component={ContactPage} />
                                           
                                           <PrivateRoute exact path="/admin" component={AdminPage} />
                                           <PrivateRoute exact path="/match" component={MatchPage} />
