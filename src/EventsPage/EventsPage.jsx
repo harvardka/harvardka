@@ -22,26 +22,7 @@ class EventsPage extends React.Component {
                     upcoming events
                 </div>
 
-                <Row>       
-                    <Column width={1/2}>
-                        <div>
-                            <img src={StudentFair} alt="Avatar" className='events_img' />
-                            <div className='events_description'>September 7, Friday, 3pm to 5pm · Student Involvement Fair</div>
-                        </div>
-                    </Column>
-                    {/* <Column width={1/2}>
-                        <div>
-                            <img src={Party} alt="Avatar" className='events_img' />
-                            <div className='events_description'>Sep. 8th: ​Potentially co-host party with AAA</div>
-                        </div>
-                    </Column> */}
-                    <Column width={1/2}>
-                        <div>
-                            <img src={MeetandGreet} alt="Avatar" className='events_img' />
-                            <div className='events_description'>September 9, Sunday, 7pm to 9pm · Meet and Greet</div>
-                        </div>
-                    </Column>
-                </Row>
+
                 <Row>
                     <Column width={1/2}>
                         <div>
