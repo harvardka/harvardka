@@ -66,33 +66,31 @@ class Header extends React.Component {
                                 </a>
                             }
                         </Navbar.Brand>
-                        <Nav>
-                          <NavItem eventKey={1} href="#/about">
-                            {this.state.isLoggedIn
-                                ? <span className="nav-center">about</span>
-                                : <span>about</span> }
-                          </NavItem>
-                        </Nav>
-                        <Nav>
-                          <NavItem eventKey={2} href='#/team'>
-                            {this.state.isLoggedIn
-                                ? <span className="nav-center">team</span>
-                                : <span>team</span> }
-                          </NavItem>
-                        </Nav>
-                        <Nav>
-                          <NavItem eventKey={2} href='#/contact'>
-                            {this.state.isLoggedIn
-                                ? <span className="nav-center">contact</span>
-                                : <span>contact</span> }
-                          </NavItem>
-                        </Nav>
                         <Navbar.Toggle />
                     </Navbar.Header>
-                    {/* <Navbar.Collapse>
-                        <Nav pullRight>
+                    <Navbar.Collapse>
+                        <Nav>
+                            <NavItem eventKey={1} href="#/about">
+                                {this.state.isLoggedIn
+                                    ? <span className="nav-center">about</span>
+                                    : <span>about</span> }
+                            </NavItem>
                         </Nav>
-                    </Navbar.Collapse> */}
+                        <Nav>
+                            <NavItem eventKey={2} href='#/team'>
+                                {this.state.isLoggedIn
+                                    ? <span className="nav-center">team</span>
+                                    : <span>team</span> }
+                            </NavItem>
+                        </Nav>
+                        <Nav>
+                            <NavItem eventKey={2} href='#/contact'>
+                                {this.state.isLoggedIn
+                                    ? <span className="nav-center">contact</span>
+                                    : <span>contact</span> }
+                            </NavItem>
+                        </Nav>
+                    </Navbar.Collapse>
                 </Navbar>
             </div>
         );
