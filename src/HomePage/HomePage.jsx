@@ -40,8 +40,8 @@ class HomePage extends React.Component {
                                 {/* <br /> */}
 
                                 <div className='button'>
-                                  <EAButton id='button' />
-                                </div>
+                                   <EAButton id='button' />
+                                   </div> 
                             </Column>
                             
                             <Column width={2/5}>

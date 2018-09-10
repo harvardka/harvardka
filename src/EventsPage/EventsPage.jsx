@@ -16,7 +16,7 @@ import Elections from './assets/images/elections.jpg';
 class EventsPage extends React.Component {
     render() {
         return (
-            <div className='events_main'>
+            <div id='events_name' className='events_main'>
                 <br />
                 <div className='events_header'>
                     upcoming events

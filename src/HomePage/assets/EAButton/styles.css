@@ -15,5 +15,12 @@ body{
 
   }
   .box:hover {
+    text-decoration: none;
+    color: #FAFFFD;
     box-shadow: 0 0 11px rgba(33,33,33,.9);
+  }
+  .box span {
+    position: relative;
+    top: 25%;
+    left: 10%;
   }
