@@ -30,6 +30,12 @@ div.additional {
   margin-bottom: 20px;
 }
 
+@media (max-width: 475px) {
+  .img {
+    margin-top: 15vh;
+  }
+}
+
 div.button {
   /* position: relative; */
   /* margin-top: -55em; */
