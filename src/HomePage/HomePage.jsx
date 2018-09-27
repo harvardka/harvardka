@@ -76,11 +76,11 @@ class HomePage extends React.Component {
                         < AboutPage />
                     </div>
                 </ScrollableAnchor> */}
-                <ScrollableAnchor id={'events'}>
+                {/* <ScrollableAnchor id={'events'}>
                     <div>
                         < EventsPage />
                     </div>
-                </ScrollableAnchor>
+                </ScrollableAnchor> */}
                 {/* <ScrollableAnchor id={'team'}>
                     <div>
                         < TeamPage />
