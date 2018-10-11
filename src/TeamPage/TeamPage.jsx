@@ -24,9 +24,6 @@ class Card extends React.Component {
       return(
           <div className="container1">
             <img src={this.props.src} alt="Avatar" className="image" />
-            <div className="overlay">
-              <div className="text">{this.props.name} <br/> <em>{this.props.role}</em></div>
-            </div>
           </div>
       )
     }

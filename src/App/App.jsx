@@ -21,6 +21,7 @@ import { MatchPage } from '../MatchPage';
 import { AdminPage } from '../AdminPage';
 import { AboutPage } from '../AboutPage';
 import { TeamPage } from '../TeamPage';
+import { PhotosPage} from '../PhotosPage';
 
 import { EventsPage } from '../EventsPage';
 import { ContactPage } from '../ContactPage';
@@ -67,6 +68,7 @@ class App extends React.Component {
                                           <Route path="/test" component={TestPage} />
                                           <Route path="/about" component={AboutPage} />
                                           <Route path="/team" component={TeamPage} />
+                                          <Route path="/photos" component={PhotosPage} />
                                           
                                           <Route path='/events' component={EventsPage} />
                                           <Route path='/contact' component={ContactPage} />
