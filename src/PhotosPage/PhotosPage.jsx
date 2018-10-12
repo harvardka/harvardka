@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import LazyLoad from 'react-lazy-load';
 
 import i1 from './assets/images/IMG_5228.jpg';
 import i2 from './assets/images/IMG_5229.jpg';
@@ -190,30 +191,38 @@ class PhotosPage extends React.Component {
                 </div>
 
                 <div className="images">
-                    <div>
-                        <Card src={i1}/>
-                        <Card src={i2}/>
-                        <Card src={i3}/>
-                        <Card src={i4}/>
-                    </div>
-                    <div>
-                        <Card src={i5}/>
-                        <Card src={i6}/>
-                        <Card src={i7}/>
-                        <Card src={i8}/>
-                    </div>
-                    <div>
-                        <Card src={i9}/>
-                        <Card src={i10}/>
-                        <Card src={i11}/>
-                        <Card src={i12}/>
-                    </div>
-                    <div>
-                        <Card src={i13}/>
-                        <Card src={i14}/>
-                        <Card src={i15}/>
-                        <Card src={i16}/>
-                    </div>
+                    <LazyLoad>
+                        <div>
+                            <Card src={i1}/>
+                            <Card src={i2}/>
+                            <Card src={i3}/>
+                            <Card src={i4}/>
+                        </div>
+                    </LazyLoad>
+                    <LazyLoad>
+                        <div>
+                            <Card src={i5}/>
+                            <Card src={i6}/>
+                            <Card src={i7}/>
+                            <Card src={i8}/>
+                        </div>
+                    </LazyLoad>
+                    <LazyLoad offsetBottom={-300}>
+                        <div>
+                            <Card src={i9}/>
+                            <Card src={i10}/>
+                            <Card src={i11}/>
+                            <Card src={i12}/>
+                        </div>
+                    </LazyLoad>
+                    <LazyLoad offsetBottom={-300}>
+                        <div>
+                            <Card src={i13}/>
+                            <Card src={i14}/>
+                            <Card src={i15}/>
+                            <Card src={i16}/>
+                        </div>
+                    </LazyLoad>
                     <div>
                         <Card src={i17}/>
                         <Card src={i18}/>
@@ -316,30 +325,38 @@ class PhotosPage extends React.Component {
                         <Card src={i83}/>
                         <Card src={i84}/>
                     </div>
-                    <div>
-                        <Card src={i85}/>
-                        <Card src={i86}/>
-                        <Card src={i87}/>
-                        <Card src={i88}/>
-                    </div>
-                    <div>
-                        <Card src={i89}/>
-                        <Card src={i90}/>
-                        <Card src={i91}/>
-                        <Card src={i92}/>
-                    </div>
-                    <div>
-                        <Card src={i93}/>
-                        <Card src={i94}/>
-                        <Card src={i95}/>
-                        <Card src={i96}/>
-                    </div>
-                    <div>
-                        <Card src={i97}/>
-                        <Card src={i98}/>
-                        <Card src={i99}/>
-                        <Card src={i100}/>
-                    </div>
+                    <LazyLoad offsetBottom={-300}>
+                        <div>
+                            <Card src={i85}/>
+                            <Card src={i86}/>
+                            <Card src={i87}/>
+                            <Card src={i88}/>
+                        </div>
+                    </LazyLoad>
+                    <LazyLoad offsetBottom={-300}>
+                        <div>
+                            <Card src={i89}/>
+                            <Card src={i90}/>
+                            <Card src={i91}/>
+                            <Card src={i92}/>
+                        </div>
+                    </LazyLoad>
+                    <LazyLoad offsetBottom={-300}>
+                        <div>
+                            <Card src={i93}/>
+                            <Card src={i94}/>
+                            <Card src={i95}/>
+                            <Card src={i96}/>
+                        </div>
+                    </LazyLoad>
+                    <LazyLoad offsetBottom={-300}>
+                        <div>
+                            <Card src={i97}/>
+                            <Card src={i98}/>
+                            <Card src={i99}/>
+                            <Card src={i100}/>
+                        </div>
+                    </LazyLoad>
                     <div>
                         <Card src={i101}/>
                         <Card src={i102}/>
@@ -412,23 +429,29 @@ class PhotosPage extends React.Component {
                         <Card src={i147}/>
                         <Card src={i148}/>
                     </div>
-                    <div>
-                        <Card src={i149}/>
-                        <Card src={i150}/>
-                        <Card src={i151}/>
-                        <Card src={i152}/>
-                    </div>
-                    <div>
-                        <Card src={i153}/>
-                        <Card src={i154}/>
-                        <Card src={i155}/>
-                        <Card src={i156}/>
-                    </div>
-                    <div>
-                        <Card src={i157}/>
-                        <Card src={i158}/>
-                        <Card src={i159}/>
-                    </div>
+                    <LazyLoad offsetBottom={-300}>
+                        <div>
+                            <Card src={i149}/>
+                            <Card src={i150}/>
+                            <Card src={i151}/>
+                            <Card src={i152}/>
+                        </div>
+                    </LazyLoad>
+                    <LazyLoad offsetBottom={-300}>
+                        <div>
+                            <Card src={i153}/>
+                            <Card src={i154}/>
+                            <Card src={i155}/>
+                            <Card src={i156}/>
+                        </div>
+                    </LazyLoad>
+                    <LazyLoad offsetBottom={-300}>
+                        <div>
+                            <Card src={i157}/>
+                            <Card src={i158}/>
+                            <Card src={i159}/>
+                        </div>
+                    </LazyLoad>
                 </div>
             </div>
         )

@@ -30,6 +30,7 @@
     "react-columns": "^1.2.0",
     "react-dom": "^16.0.0",
     "react-grid-gallery": "^0.5.3",
+    "react-lazy-load": "^3.0.13",
     "react-motion": "^0.5.2",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
