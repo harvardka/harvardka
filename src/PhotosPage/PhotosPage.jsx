@@ -159,7 +159,7 @@ import i155 from './assets/images/IMG_6799.jpg';
 import i156 from './assets/images/IMG_6800.jpg';
 import i157 from './assets/images/IMG_6801.jpg';
 import i158 from './assets/images/IMG_6803.jpg';
-import i159 from './assets/images/IMG_6804.jpg';
+// import i159 from './assets/images/IMG_6804.jpg';
 
 class Card extends React.Component {
     render() {
@@ -427,7 +427,7 @@ class PhotosPage extends React.Component {
                     <div>
                         <Card src={i157}/>
                         <Card src={i158}/>
-                        <Card src={i159}/>
+                        {/* <Card src={i159}/> */}
                     </div>
                 </div>
             </div>
