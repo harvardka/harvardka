@@ -2,27 +2,37 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Assets
-import Abe from './assets/images/abe_v.jpg';
-import Nicole from './assets/images/nicole_tzuyu.png';
-import Joon from './assets/images/joon_top.jpg';
-import Joyce from './assets/images/joyce_jenni.jpg';
+import Abe from './assets/images/abe_lee.jpg';
+import Nicole from './assets/images/nicole_kim.jpg';
+import Joon from './assets/images/joon_kim.jpg';
+import Joyce from './assets/images/joyce_kang.jpg';
 
-import Jeeyoon from './assets/images/jeeyoon_nana.jpg';
-import Andrew from './assets/images/andrew_kangjoon.jpg';
-import Xilin from './assets/images/xilin_suzy.jpg';
-import Myungin from './assets/images/myungin_kwangsoo.jpg';
+import Jeeyoon from './assets/images/jeeyoon_lee.jpg';
+import Andrew from './assets/images/andrew_lee.jpg';
+import Xilin from './assets/images/xilin_zhou.jpg';
+import Myungin from './assets/images/myungin_lee.jpg';
 
-import Chris from './assets/images/chris_woobin.jpg';
-import Claire from './assets/images/claire_jiwon.jpg';
-import Kenneth from './assets/images/kenneth_mino.jpg';
-import Gayoung from './assets/images/gayoung_yoona.jpg';
+import Chris from './assets/images/chris_cheon.jpg';
+import Claire from './assets/images/claire_spackman.jpg';
+import Kenneth from './assets/images/kenneth_kim.jpg';
+import Gayoung from './assets/images/gayoung_choi.jpg';
+
+import Calla from './assets/images/calla_bai.jpg';
+import Ben from './assets/images/ben_chun.jpg';
+import Sandra from './assets/images/sandra_moon.jpg';
+
+import Presidents from './assets/images/presidents.jpg';
+import CultureChairs from './assets/images/culture_chairs.jpg';
+import FinanceChairs from './assets/images/finance_chairs.jpg';
+import SocialChairs from './assets/images/social_chairs.jpg';
+import FroshReps from './assets/images/frosh_reps.jpg';
 
 import './assets/styles.css';
 
 class Card extends React.Component {
     render() {
       return(
-          <div className="container1">
+          <div>
             <img src={this.props.src} alt="Avatar" className="image" />
           </div>
       )
@@ -53,26 +63,70 @@ class TeamPage extends React.Component {
                 </div>
 
                 <div className="images">
-                  <div>
-                    <Card src={Abe} name="Abe Lee" role="Co-President"/>
-                    <Card src={Nicole} name="Nicole Kim" role="Co-President"/>
-                    <Card src={Joon} name="Joon Kim" role="Culture Chair"/>
-                    <Card src={Joyce} name="Joyce Kang" role="Culture Chair"/>
-                  </div>
-                  <div>
-                    <Card src={Jeeyoon} name="Jeeyoon Lee" role="Community Chair"/>
-                    <Card src={Andrew} name="Andrew Lee" role="EduPol Chair"/>
-                    <Card src={Xilin} name="Xilin Zhou" role="Pub Chair"/>
-                    <Card src={Myungin} name="Myungin Lee" role="Tech Chair"/>
-                  </div>
-                  <div>
-                    <Card src={Chris} name="Chris Cheon" role="Social Chair"/>
-                    <Card src={Claire} name="Claire Spackman" role="Social Chair"/>
-                    <Card src={Kenneth} name="Kenneth Kim" role="Finance Chair"/>
-                    <Card src={Gayoung} name="Gayoung Choi" role="Finance Chair"/>
-                  </div>
+                    
+                    <div class='container1'>
+                        <Card src={Presidents}/>
+                    </div>
+                    
+                    <div class='container3'>
+                        <Card src={Abe} name="Abe Lee" role="Co-President"/>
+                    </div>
+                    <div class='container3'>
+                        <Card src={Nicole} name="Nicole Kim" role="Co-President"/>
+                    </div>
+                    <div class='container3'>
+                        <Card src={Joyce} name="Joyce Kang" role="Culture Chair"/>
+                    </div>
+                    <div class='container3'>
+                        <Card src={Joon} name="Joon Kim" role="Culture Chair"/>
+                    </div>
+                
+                    <div class='container1'>
+                        <Card src={FroshReps}/>
+                    </div>
+                    <div class='container1'>
+                        <Card src={CultureChairs}/>
+                    </div>
+                    <div class='container2'>
+                        <Card src={Calla} name="Calla Bai" role="Frosh Rep"/>
+                    </div>
+                    <div class='container2'>
+                        <Card src={Ben} name="Ben Chun" role="Frosh Rep"/>
+                    </div>
+                    <div class='container2'>
+                        <Card src={Sandra} name="Sandra Moon" role="Frosh Rep"/>
+                    </div>
+                    <div class='container1'>
+                        <Card src={FroshReps}/>
+                    </div>
+                    <div class='container3'>
+                        <Card src={Chris} name="Chris Cheon" role="Social Chair"/>
+                    </div>
+                    <div class='container3'>
+                        <Card src={Claire} name="Claire Spackman" role="Social Chair"/>
+                    </div>
+                    <div class='container3'>
+                        <Card src={Kenneth} name="Kenneth Kim" role="Finance Chair"/>
+                    </div>
+                    <div class='container3'>
+                        <Card src={Gayoung} name="Gayoung Choi" role="Finance Chair"/>
+                    </div>
+                    <div class='container1'>
+                        <Card src={Myungin} name="Myungin Lee" role="Tech Chair"/>
+                    </div>
+                    <div class='container1'>
+                        <Card src={FinanceChairs}/>
+                    </div>
+                    <div class='container2'>
+                        <Card src={Xilin} name="Xilin Zhou" role="Pub Chair"/>
+                    </div>
+                    <div class='container2'>
+                        <Card src={Andrew} name="Andrew Lee" role="EduPol Chair"/>
+                    </div>
+                    <div class='container2'>
+                        <Card src={Jeeyoon} name="Jeeyoon Lee" role="Community Chair"/>
+                    </div>
                 </div>
-                {/* <div className="footer">Harvard Korean American Association 2018 ©</div> */}
             </div>
         )
     }
