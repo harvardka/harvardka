@@ -25,8 +25,8 @@ export default class EAButton extends Component {
                 {/* <button onClick={ this.handleShow } className="box">
                     Sign up for SibFam
                 </button> */}
-                <a className="box" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeRj61v1gfWyQrrHtBnGY6i6oKT6wf0AhsriHjPXiFaZu3BrA/viewform?usp=sf_link" >
-                <span>Sign up for a SibFam</span>
+                <a className="box" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScNgT6uWhyEfPuOgFLH5YBFw6eSNG6TXSuYrBjGHNz3kZorcA/viewform?usp=sf_link" >
+                <span>Sign up for Kommunity Kickbacks!</span>
                 </a>
 
                 <EAModal show={ this.state.show } handleShow={ this.handleShow }/>
